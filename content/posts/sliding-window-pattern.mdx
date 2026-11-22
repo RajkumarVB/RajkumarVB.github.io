@@ -1,0 +1,78 @@
+---
+title: "Sliding window: one pattern, seven LeetCode problems"
+date: 2026-11-22
+summary: "How to spot a sliding window problem, the template I reuse, and how it covers seven problems from easy to hard."
+tags: [DSA, LeetCode, Java]
+---
+
+Sliding window shows up whenever a problem asks about a **contiguous** subarray or substring and wants the
+longest, shortest, or a count that satisfies some rule. Instead of checking every substring, which is
+O(n²) or worse, you keep a window `[left, right]` and move both ends forward. Each element enters
+and leaves the window at most once, so the whole scan is O(n).
+
+## How to spot it
+
+Look for these signals in the problem statement:
+
+- "substring" or "subarray" (contiguous, not subsequence)
+- "longest", "shortest", "minimum window", or "at most K"
+- a rule you can check incrementally as elements enter and leave (counts, distinct characters, a sum)
+
+## The template
+
+```java
+int left = 0, best = 0;
+for (int right = 0; right < n; right++) {
+    add(s.charAt(right));               // grow the window
+    while (windowIsInvalid()) {         // shrink until valid again
+        remove(s.charAt(left++));
+    }
+    best = Math.max(best, right - left + 1);
+}
+return best;
+```
+
+Only the three helpers change from problem to problem.
+
+## Example: longest substring without repeating characters
+
+The simple version keeps a set and shrinks one character at a time. A faster version stores each
+character's last index and **jumps** `left` straight past the repeat:
+
+```java
+public int lengthOfLongestSubstring(String s) {
+    Map<Character, Integer> last = new HashMap<>();
+    int left = 0, best = 0;
+    for (int right = 0; right < s.length(); right++) {
+        char c = s.charAt(right);
+        if (last.containsKey(c)) left = Math.max(left, last.get(c) + 1);
+        last.put(c, right);
+        best = Math.max(best, right - left + 1);
+    }
+    return best;
+}
+```
+
+`Math.max` matters: a character's last index can sit to the left of the current window, and moving
+`left` backwards would break the invariant.
+
+## The seven problems
+
+| # | Problem | Difficulty | What the window tracks |
+|---|---|---|---|
+| 121 | Best Time to Buy and Sell Stock | Easy | Minimum price so far |
+| 3456 | Find Special Substring of Length K | Easy | Runs of equal characters |
+| 3 | Longest Substring Without Repeating Characters | Medium | Last index of each character |
+| 424 | Longest Repeating Character Replacement | Medium | Valid while `len - maxFreq <= k` |
+| 567 | Permutation in String | Medium | Fixed-size window of 26 counts |
+| 76 | Minimum Window Substring | Hard | Counts still needed |
+| 239 | Sliding Window Maximum | Hard | Monotonic deque of indices |
+
+## Takeaways
+
+1. Decide whether the window is **fixed** size (567) or **variable** (3, 424, 76).
+2. Pick the smallest state that tells you if the window is valid: a count array, a map, or a deque.
+3. For "longest", update the answer after shrinking. For "shortest", update it while shrinking.
+
+All my solutions for these are in the [LeetCode-Solutions repo](https://github.com/RajkumarVB/LeetCode-Solutions),
+and the [DSA page](/dsa/) lists every pattern.

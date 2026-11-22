@@ -1,0 +1,1770 @@
+{
+  "generatedAt": "2026-11-21",
+  "total": 235,
+  "byDifficulty": {
+    "Easy": 81,
+    "Medium": 133,
+    "Hard": 21
+  },
+  "categories": [
+    {
+      "name": "Arrays & Hashing",
+      "count": 24,
+      "problems": [
+        {
+          "id": 1,
+          "title": "Two Sum",
+          "slug": "two-sum",
+          "difficulty": "Easy",
+          "idea": "One pass with a HashMap value -> index: for each x, if target - x has been seen, you're done; otherwise store x."
+        },
+        {
+          "id": 14,
+          "title": "Longest Common Prefix",
+          "slug": "longest-common-prefix",
+          "difficulty": "Easy",
+          "idea": "Vertical scan: compare character i across all strings up to the shortest length"
+        },
+        {
+          "id": 169,
+          "title": "Majority Element",
+          "slug": "majority-element",
+          "difficulty": "Easy",
+          "idea": "Boyer-Moore voting: keep a candidate and a count"
+        },
+        {
+          "id": 217,
+          "title": "Contains Duplicate",
+          "slug": "contains-duplicate",
+          "difficulty": "Easy",
+          "idea": "Use a HashSet and return as soon as a value is already in it"
+        },
+        {
+          "id": 242,
+          "title": "Valid Anagram",
+          "slug": "valid-anagram",
+          "difficulty": "Easy",
+          "idea": "An int[26] count: increment for s, decrement for t, then check all zeros"
+        },
+        {
+          "id": 350,
+          "title": "Intersection of Two Arrays II",
+          "slug": "intersection-of-two-arrays-ii",
+          "difficulty": "Easy",
+          "idea": "Count one array in a map, then walk the other and take a value whenever its count is still positive (decrementing)"
+        },
+        {
+          "id": 387,
+          "title": "First Unique Character in a String",
+          "slug": "first-unique-character-in-a-string",
+          "difficulty": "Easy",
+          "idea": "Two passes: count frequencies (an int[26] is enough), then return the first index whose count is 1."
+        },
+        {
+          "id": 485,
+          "title": "Max Consecutive Ones",
+          "slug": "max-consecutive-ones",
+          "difficulty": "Easy",
+          "idea": "Running counter that resets on 0; track the maximum."
+        },
+        {
+          "id": 575,
+          "title": "Distribute Candies",
+          "slug": "distribute-candies",
+          "difficulty": "Easy",
+          "idea": "Answer = min(number of distinct types, n/2)"
+        },
+        {
+          "id": 1422,
+          "title": "Maximum Score After Splitting a String",
+          "slug": "maximum-score-after-splitting-a-string",
+          "difficulty": "Easy",
+          "idea": "Precompute suffix counts of ones (or start with the total ones and subtract as you go), then scan each split point once."
+        },
+        {
+          "id": 1496,
+          "title": "Path Crossing",
+          "slug": "path-crossing",
+          "difficulty": "Easy",
+          "idea": "Track visited coordinates in a HashSet"
+        },
+        {
+          "id": 1624,
+          "title": "Largest Substring Between Two Equal Characters",
+          "slug": "largest-substring-between-two-equal-characters",
+          "difficulty": "Easy",
+          "idea": "Store each character's first index; for each later occurrence the answer candidate is i - first[c] - 1"
+        },
+        {
+          "id": 1752,
+          "title": "Check if Array Is Sorted and Rotated",
+          "slug": "check-if-array-is-sorted-and-rotated",
+          "difficulty": "Easy",
+          "idea": "Count the 'drops' where nums[i] > nums[(i+1) % n] (circularly)"
+        },
+        {
+          "id": 1758,
+          "title": "Minimum Changes To Make Alternating Binary String",
+          "slug": "minimum-changes-to-make-alternating-binary-string",
+          "difficulty": "Easy",
+          "idea": "Only two targets exist: 0101.."
+        },
+        {
+          "id": 1929,
+          "title": "Concatenation of Array",
+          "slug": "concatenation-of-array",
+          "difficulty": "Easy",
+          "idea": "result[i] = nums[i % n]."
+        },
+        {
+          "id": 3069,
+          "title": "Distribute Elements Into Two Arrays I",
+          "slug": "distribute-elements-into-two-arrays-i",
+          "difficulty": "Easy",
+          "idea": "Direct simulation."
+        },
+        {
+          "id": 36,
+          "title": "Valid Sudoku",
+          "slug": "valid-sudoku",
+          "difficulty": "Medium",
+          "idea": "Nine HashSets each for rows, columns and boxes"
+        },
+        {
+          "id": 38,
+          "title": "Count and Say",
+          "slug": "count-and-say",
+          "difficulty": "Medium",
+          "idea": "Build each term from the previous one by scanning runs of equal characters and appending count + char."
+        },
+        {
+          "id": 49,
+          "title": "Group Anagrams",
+          "slug": "group-anagrams",
+          "difficulty": "Medium",
+          "idea": "Anagrams share a canonical key: the sorted string, or the 26-letter count array"
+        },
+        {
+          "id": 128,
+          "title": "Longest Consecutive Sequence",
+          "slug": "longest-consecutive-sequence",
+          "difficulty": "Medium",
+          "idea": "Put everything in a HashSet"
+        },
+        {
+          "id": 229,
+          "title": "Majority Element II",
+          "slug": "majority-element-ii",
+          "difficulty": "Medium",
+          "idea": "At most two such elements exist"
+        },
+        {
+          "id": 238,
+          "title": "Product of Array Except Self",
+          "slug": "product-of-array-except-self",
+          "difficulty": "Medium",
+          "idea": "answer[i] = (product of everything left of i) * (product of everything right of i)"
+        },
+        {
+          "id": 347,
+          "title": "Top K Frequent Elements",
+          "slug": "top-k-frequent-elements",
+          "difficulty": "Medium",
+          "idea": "Count with a map"
+        },
+        {
+          "id": 560,
+          "title": "Subarray Sum Equals K",
+          "slug": "subarray-sum-equals-k",
+          "difficulty": "Medium",
+          "idea": "Prefix sums: subarray (i, j] sums to k if prefix[j] - prefix[i] = k"
+        }
+      ]
+    },
+    {
+      "name": "Two Pointers",
+      "count": 19,
+      "problems": [
+        {
+          "id": 26,
+          "title": "Remove Duplicates from Sorted Array",
+          "slug": "remove-duplicates-from-sorted-array",
+          "difficulty": "Easy",
+          "idea": "Slow pointer i marks the last unique value; fast pointer j scans"
+        },
+        {
+          "id": 28,
+          "title": "Find the Index of the First Occurrence in a String",
+          "slug": "find-the-index-of-the-first-occurrence-in-a-string",
+          "difficulty": "Easy",
+          "idea": "Brute force compares needle at each start: O(n*m)"
+        },
+        {
+          "id": 88,
+          "title": "Merge Sorted Array",
+          "slug": "merge-sorted-array",
+          "difficulty": "Easy",
+          "idea": "Fill from the back: compare the largest remaining of each array and write it at index m+n-1, moving backwards"
+        },
+        {
+          "id": 125,
+          "title": "Valid Palindrome",
+          "slug": "valid-palindrome",
+          "difficulty": "Easy",
+          "idea": "Two pointers from both ends, skipping non-alphanumerics and comparing lowercase characters"
+        },
+        {
+          "id": 283,
+          "title": "Move Zeroes",
+          "slug": "move-zeroes",
+          "difficulty": "Easy",
+          "idea": "Write pointer: for each non-zero element, swap it into position w and increment w"
+        },
+        {
+          "id": 344,
+          "title": "Reverse String",
+          "slug": "reverse-string",
+          "difficulty": "Easy",
+          "idea": "Swap from both ends moving inward."
+        },
+        {
+          "id": 392,
+          "title": "Is Subsequence",
+          "slug": "is-subsequence",
+          "difficulty": "Easy",
+          "idea": "Two pointers: advance through t and move the s pointer whenever characters match"
+        },
+        {
+          "id": 5,
+          "title": "Longest Palindromic Substring",
+          "slug": "longest-palindromic-substring",
+          "difficulty": "Medium",
+          "idea": "Expand around each centre: 2n-1 centres (each character and each gap)"
+        },
+        {
+          "id": 11,
+          "title": "Container With Most Water",
+          "slug": "container-with-most-water",
+          "difficulty": "Medium",
+          "idea": "Two pointers from both ends"
+        },
+        {
+          "id": 15,
+          "title": "3Sum",
+          "slug": "3sum",
+          "difficulty": "Medium",
+          "idea": "Sort, fix the first element, then solve two-sum on the rest with two pointers"
+        },
+        {
+          "id": 18,
+          "title": "4Sum",
+          "slug": "4sum",
+          "difficulty": "Medium",
+          "idea": "Same idea as 3Sum with one more fixed loop: two nested loops + two pointers"
+        },
+        {
+          "id": 31,
+          "title": "Next Permutation",
+          "slug": "next-permutation",
+          "difficulty": "Medium",
+          "idea": "1) From the right, find the first i with nums[i] < nums[i+1] (the pivot)"
+        },
+        {
+          "id": 75,
+          "title": "Sort Colors",
+          "slug": "sort-colors",
+          "difficulty": "Medium",
+          "idea": "Dutch national flag: pointers low, mid, high"
+        },
+        {
+          "id": 167,
+          "title": "Two Sum II - Input Array Is Sorted",
+          "slug": "two-sum-ii-input-array-is-sorted",
+          "difficulty": "Medium",
+          "idea": "Two pointers from both ends: if the sum is too big move right left, if too small move left right."
+        },
+        {
+          "id": 189,
+          "title": "Rotate Array",
+          "slug": "rotate-array",
+          "difficulty": "Medium",
+          "idea": "k %= n, then three reversals: whole array, first k, last n-k"
+        },
+        {
+          "id": 443,
+          "title": "String Compression",
+          "slug": "string-compression",
+          "difficulty": "Medium",
+          "idea": "Read pointer scans runs; write pointer writes the char and then each digit of the count"
+        },
+        {
+          "id": 647,
+          "title": "Palindromic Substrings",
+          "slug": "palindromic-substrings",
+          "difficulty": "Medium",
+          "idea": "Expand around each of the 2n-1 centres; every successful expansion step is one more palindrome."
+        },
+        {
+          "id": 2149,
+          "title": "Rearrange Array Elements by Sign",
+          "slug": "rearrange-array-elements-by-sign",
+          "difficulty": "Medium",
+          "idea": "Two write pointers into a new array: positives go to even indices (0, 2, ...), negatives to odd (1, 3, ...)."
+        },
+        {
+          "id": 42,
+          "title": "Trapping Rain Water",
+          "slug": "trapping-rain-water",
+          "difficulty": "Hard",
+          "idea": "Water at i = min(maxLeft[i], maxRight[i]) - h[i]"
+        }
+      ]
+    },
+    {
+      "name": "Sliding Window",
+      "count": 7,
+      "problems": [
+        {
+          "id": 121,
+          "title": "Best Time to Buy and Sell Stock",
+          "slug": "best-time-to-buy-and-sell-stock",
+          "difficulty": "Easy",
+          "idea": "Scan once, tracking the minimum price seen so far; the best profit when selling today is price - minSoFar."
+        },
+        {
+          "id": 3456,
+          "title": "Find Special Substring of Length K",
+          "slug": "find-special-substring-of-length-k",
+          "difficulty": "Easy",
+          "idea": "Equivalent to: some maximal run of equal characters has length exactly k"
+        },
+        {
+          "id": 3,
+          "title": "Longest Substring Without Repeating Characters",
+          "slug": "longest-substring-without-repeating-characters",
+          "difficulty": "Medium",
+          "idea": "Sliding window with a set: extend right; on a repeat, shrink from the left until it's gone"
+        },
+        {
+          "id": 424,
+          "title": "Longest Repeating Character Replacement",
+          "slug": "longest-repeating-character-replacement",
+          "difficulty": "Medium",
+          "idea": "Sliding window: it's valid while windowLen - maxFreq <= k"
+        },
+        {
+          "id": 567,
+          "title": "Permutation in String",
+          "slug": "permutation-in-string",
+          "difficulty": "Medium",
+          "idea": "Fixed-size sliding window of length /s1/ with 26-letter counts"
+        },
+        {
+          "id": 76,
+          "title": "Minimum Window Substring",
+          "slug": "minimum-window-substring",
+          "difficulty": "Hard",
+          "idea": "Variable sliding window with counts"
+        },
+        {
+          "id": 239,
+          "title": "Sliding Window Maximum",
+          "slug": "sliding-window-maximum",
+          "difficulty": "Hard",
+          "idea": "Monotonic deque of indices with decreasing values"
+        }
+      ]
+    },
+    {
+      "name": "Stack & Monotonic Stack",
+      "count": 9,
+      "problems": [
+        {
+          "id": 20,
+          "title": "Valid Parentheses",
+          "slug": "valid-parentheses",
+          "difficulty": "Easy",
+          "idea": "Push openers onto a stack"
+        },
+        {
+          "id": 232,
+          "title": "Implement Queue using Stacks",
+          "slug": "implement-queue-using-stacks",
+          "difficulty": "Easy",
+          "idea": "Push onto an 'in' stack"
+        },
+        {
+          "id": 496,
+          "title": "Next Greater Element I",
+          "slug": "next-greater-element-i",
+          "difficulty": "Easy",
+          "idea": "Compute next-greater for all of nums2 with a monotonic stack (right to left), store it in a map value -> next greater, then look up each nums1 value."
+        },
+        {
+          "id": 150,
+          "title": "Evaluate Reverse Polish Notation",
+          "slug": "evaluate-reverse-polish-notation",
+          "difficulty": "Medium",
+          "idea": "Push numbers onto a stack; on an operator pop b then a (order matters for - and /), push a op b."
+        },
+        {
+          "id": 155,
+          "title": "Min Stack",
+          "slug": "min-stack",
+          "difficulty": "Medium",
+          "idea": "Store each element together with the minimum of the stack at the time it was pushed; getMin reads the top's stored minimum."
+        },
+        {
+          "id": 503,
+          "title": "Next Greater Element II",
+          "slug": "next-greater-element-ii",
+          "difficulty": "Medium",
+          "idea": "Simulate two copies of the array: iterate i from 2n-1 down to 0 using nums[i % n] with a monotonic stack, and only record answers when i < n."
+        },
+        {
+          "id": 739,
+          "title": "Daily Temperatures",
+          "slug": "daily-temperatures",
+          "difficulty": "Medium",
+          "idea": "Monotonic stack of indices (next greater element)"
+        },
+        {
+          "id": 853,
+          "title": "Car Fleet",
+          "slug": "car-fleet",
+          "difficulty": "Medium",
+          "idea": "Sort by position and walk from the car closest to target"
+        },
+        {
+          "id": 84,
+          "title": "Largest Rectangle in Histogram",
+          "slug": "largest-rectangle-in-histogram",
+          "difficulty": "Hard",
+          "idea": "Each bar's best rectangle extends to the previous and next smaller bars: area = h[i] * (nextSmaller - prevSmaller - 1)"
+        }
+      ]
+    },
+    {
+      "name": "Binary Search",
+      "count": 13,
+      "problems": [
+        {
+          "id": 35,
+          "title": "Search Insert Position",
+          "slug": "search-insert-position",
+          "difficulty": "Easy",
+          "idea": "This is the lower bound: the first index with nums[i] >= target"
+        },
+        {
+          "id": 69,
+          "title": "Sqrt(x)",
+          "slug": "sqrtx",
+          "difficulty": "Easy",
+          "idea": "Binary search for the largest m with m*m <= x"
+        },
+        {
+          "id": 704,
+          "title": "Binary Search",
+          "slug": "binary-search",
+          "difficulty": "Easy",
+          "idea": "Classic template: while (lo <= hi), mid = lo + (hi - lo) / 2 avoids overflow; move lo or hi past mid."
+        },
+        {
+          "id": 33,
+          "title": "Search in Rotated Sorted Array",
+          "slug": "search-in-rotated-sorted-array",
+          "difficulty": "Medium",
+          "idea": "One half around mid is always sorted"
+        },
+        {
+          "id": 34,
+          "title": "Find First and Last Position of Element in Sorted Array",
+          "slug": "find-first-and-last-position-of-element-in-sorted-array",
+          "difficulty": "Medium",
+          "idea": "Run binary search twice"
+        },
+        {
+          "id": 74,
+          "title": "Search a 2D Matrix",
+          "slug": "search-a-2d-matrix",
+          "difficulty": "Medium",
+          "idea": "Treat it as one sorted array of length m*n: index k maps to row k / cols and column k % cols"
+        },
+        {
+          "id": 81,
+          "title": "Search in Rotated Sorted Array II",
+          "slug": "search-in-rotated-sorted-array-ii",
+          "difficulty": "Medium",
+          "idea": "When nums[lo] == nums[mid] == nums[hi] you can't tell which half is sorted, so shrink both ends by one"
+        },
+        {
+          "id": 153,
+          "title": "Find Minimum in Rotated Sorted Array",
+          "slug": "find-minimum-in-rotated-sorted-array",
+          "difficulty": "Medium",
+          "idea": "At each step one half is sorted"
+        },
+        {
+          "id": 162,
+          "title": "Find Peak Element",
+          "slug": "find-peak-element",
+          "difficulty": "Medium",
+          "idea": "If nums[mid] < nums[mid+1] you are on an uphill slope, so a peak must exist to the right; otherwise one exists at mid or to the left."
+        },
+        {
+          "id": 540,
+          "title": "Single Element in a Sorted Array",
+          "slug": "single-element-in-a-sorted-array",
+          "difficulty": "Medium",
+          "idea": "Before the single element, pairs start at even indices; after it, at odd ones"
+        },
+        {
+          "id": 875,
+          "title": "Koko Eating Bananas",
+          "slug": "koko-eating-bananas",
+          "difficulty": "Medium",
+          "idea": "Binary search on the answer: speeds 1..max(pile)"
+        },
+        {
+          "id": 981,
+          "title": "Time Based Key-Value Store",
+          "slug": "time-based-key-value-store",
+          "difficulty": "Medium",
+          "idea": "Map key -> list of (timestamp, value), already sorted because timestamps only increase"
+        },
+        {
+          "id": 4,
+          "title": "Median of Two Sorted Arrays",
+          "slug": "median-of-two-sorted-arrays",
+          "difficulty": "Hard",
+          "idea": "Binary search the partition in the smaller array: take i from nums1 and half - i from nums2"
+        }
+      ]
+    },
+    {
+      "name": "Linked List",
+      "count": 18,
+      "problems": [
+        {
+          "id": 21,
+          "title": "Merge Two Sorted Lists",
+          "slug": "merge-two-sorted-lists",
+          "difficulty": "Easy",
+          "idea": "Dummy head + tail pointer; attach the smaller head each step, then append whatever remains."
+        },
+        {
+          "id": 141,
+          "title": "Linked List Cycle",
+          "slug": "linked-list-cycle",
+          "difficulty": "Easy",
+          "idea": "Floyd: slow moves 1, fast moves 2; if there's a cycle they meet, otherwise fast reaches null"
+        },
+        {
+          "id": 160,
+          "title": "Intersection of Two Linked Lists",
+          "slug": "intersection-of-two-linked-lists",
+          "difficulty": "Easy",
+          "idea": "HashSet of nodes from list A works in O(n) space"
+        },
+        {
+          "id": 206,
+          "title": "Reverse Linked List",
+          "slug": "reverse-linked-list",
+          "difficulty": "Easy",
+          "idea": "Iterative three-pointer pattern: save next, point curr.next to prev, advance prev and curr"
+        },
+        {
+          "id": 234,
+          "title": "Palindrome Linked List",
+          "slug": "palindrome-linked-list",
+          "difficulty": "Easy",
+          "idea": "O(1) space: find the middle with slow/fast pointers, reverse the second half, and compare it with the first half node by node."
+        },
+        {
+          "id": 876,
+          "title": "Middle of the Linked List",
+          "slug": "middle-of-the-linked-list",
+          "difficulty": "Easy",
+          "idea": "Slow/fast pointers: when fast reaches the end, slow is at the middle."
+        },
+        {
+          "id": 2,
+          "title": "Add Two Numbers",
+          "slug": "add-two-numbers",
+          "difficulty": "Medium",
+          "idea": "Walk both lists together with a carry, treating a finished list as 0"
+        },
+        {
+          "id": 19,
+          "title": "Remove Nth Node From End of List",
+          "slug": "remove-nth-node-from-end-of-list",
+          "difficulty": "Medium",
+          "idea": "One pass: move a fast pointer n steps ahead, then move fast and slow together until fast reaches the last node; slow is just before the target"
+        },
+        {
+          "id": 138,
+          "title": "Copy List with Random Pointer",
+          "slug": "copy-list-with-random-pointer",
+          "difficulty": "Medium",
+          "idea": "Pass 1: create a clone for every node in a map old -> new"
+        },
+        {
+          "id": 142,
+          "title": "Linked List Cycle II",
+          "slug": "linked-list-cycle-ii",
+          "difficulty": "Medium",
+          "idea": "After slow and fast meet, reset slow to head and move both one step at a time; they meet at the cycle start"
+        },
+        {
+          "id": 143,
+          "title": "Reorder List",
+          "slug": "reorder-list",
+          "difficulty": "Medium",
+          "idea": "Three classic steps: find the middle (slow/fast), reverse the second half, then merge the two halves alternately."
+        },
+        {
+          "id": 146,
+          "title": "LRU Cache",
+          "slug": "lru-cache",
+          "difficulty": "Medium",
+          "idea": "HashMap key -> node plus a doubly linked list ordered by recency, with dummy head and tail"
+        },
+        {
+          "id": 148,
+          "title": "Sort List",
+          "slug": "sort-list",
+          "difficulty": "Medium",
+          "idea": "Merge sort: split at the middle with slow/fast (fast starts at head.next so the split is balanced), sort both halves recursively, and merge the two sorted lists."
+        },
+        {
+          "id": 237,
+          "title": "Delete Node in a Linked List",
+          "slug": "delete-node-in-a-linked-list",
+          "difficulty": "Medium",
+          "idea": "You can't reach the previous node, so copy the next node's value into this node and unlink the next node: node.val = node.next.val; node.next = node.next.next"
+        },
+        {
+          "id": 287,
+          "title": "Find the Duplicate Number",
+          "slug": "find-the-duplicate-number",
+          "difficulty": "Medium",
+          "idea": "Treat i -> nums[i] as a linked list; the duplicate is where a cycle starts"
+        },
+        {
+          "id": 328,
+          "title": "Odd Even Linked List",
+          "slug": "odd-even-linked-list",
+          "difficulty": "Medium",
+          "idea": "Keep two chains (odd and even) and remember evenHead"
+        },
+        {
+          "id": 725,
+          "title": "Split Linked List in Parts",
+          "slug": "split-linked-list-in-parts",
+          "difficulty": "Medium",
+          "idea": "Count the length L"
+        },
+        {
+          "id": 25,
+          "title": "Reverse Nodes in k-Group",
+          "slug": "reverse-nodes-in-k-group",
+          "difficulty": "Hard",
+          "idea": "Loop: find the kth node from the current group start (stop if missing)"
+        }
+      ]
+    },
+    {
+      "name": "Trees",
+      "count": 30,
+      "problems": [
+        {
+          "id": 94,
+          "title": "Binary Tree Inorder Traversal",
+          "slug": "binary-tree-inorder-traversal",
+          "difficulty": "Easy",
+          "idea": "Iterative version: push all left children onto a stack, pop one, visit it, then move to its right child."
+        },
+        {
+          "id": 100,
+          "title": "Same Tree",
+          "slug": "same-tree",
+          "difficulty": "Easy",
+          "idea": "Both null -> true; one null or values differ -> false; otherwise recurse on left and right."
+        },
+        {
+          "id": 101,
+          "title": "Symmetric Tree",
+          "slug": "symmetric-tree",
+          "difficulty": "Easy",
+          "idea": "Compare the left and right subtrees as mirrors: values equal, left.left vs right.right, and left.right vs right.left."
+        },
+        {
+          "id": 104,
+          "title": "Maximum Depth of Binary Tree",
+          "slug": "maximum-depth-of-binary-tree",
+          "difficulty": "Easy",
+          "idea": "depth(node) = 1 + max(depth(left), depth(right))"
+        },
+        {
+          "id": 108,
+          "title": "Convert Sorted Array to Binary Search Tree",
+          "slug": "convert-sorted-array-to-binary-search-tree",
+          "difficulty": "Easy",
+          "idea": "Make the middle element the root and recurse on the left and right halves; this keeps the tree balanced."
+        },
+        {
+          "id": 110,
+          "title": "Balanced Binary Tree",
+          "slug": "balanced-binary-tree",
+          "difficulty": "Easy",
+          "idea": "Compute heights bottom-up (post-order) and check the balance condition in the same pass, so it runs in O(n) instead of O(n^2)."
+        },
+        {
+          "id": 144,
+          "title": "Binary Tree Preorder Traversal",
+          "slug": "binary-tree-preorder-traversal",
+          "difficulty": "Easy",
+          "idea": "Iteratively: pop from a stack, visit, push right child then left child (so left is processed first)."
+        },
+        {
+          "id": 145,
+          "title": "Binary Tree Postorder Traversal",
+          "slug": "binary-tree-postorder-traversal",
+          "difficulty": "Easy",
+          "idea": "Recursive DFS: visit children first, then the node"
+        },
+        {
+          "id": 226,
+          "title": "Invert Binary Tree",
+          "slug": "invert-binary-tree",
+          "difficulty": "Easy",
+          "idea": "Swap children at each node and recurse"
+        },
+        {
+          "id": 404,
+          "title": "Sum of Left Leaves",
+          "slug": "sum-of-left-leaves",
+          "difficulty": "Easy",
+          "idea": "DFS passing an isLeft flag; add the value when the node is a leaf and isLeft is true."
+        },
+        {
+          "id": 543,
+          "title": "Diameter of Binary Tree",
+          "slug": "diameter-of-binary-tree",
+          "difficulty": "Easy",
+          "idea": "While computing heights bottom-up, the longest path bending at a node is leftHeight + rightHeight; keep the maximum in a global variable."
+        },
+        {
+          "id": 572,
+          "title": "Subtree of Another Tree",
+          "slug": "subtree-of-another-tree",
+          "difficulty": "Easy",
+          "idea": "At every node of root, run isSameTree(node, subRoot)"
+        },
+        {
+          "id": 98,
+          "title": "Validate Binary Search Tree",
+          "slug": "validate-binary-search-tree",
+          "difficulty": "Medium",
+          "idea": "Pass down an allowed (min, max) range; every node must lie strictly inside it"
+        },
+        {
+          "id": 102,
+          "title": "Binary Tree Level Order Traversal",
+          "slug": "binary-tree-level-order-traversal",
+          "difficulty": "Medium",
+          "idea": "BFS with a queue; read q.size() at the start of each level so you know how many nodes belong to it."
+        },
+        {
+          "id": 103,
+          "title": "Binary Tree Zigzag Level Order Traversal",
+          "slug": "binary-tree-zigzag-level-order-traversal",
+          "difficulty": "Medium",
+          "idea": "Normal BFS; on odd levels insert each value at the front of the level list (or reverse the list) instead of changing the traversal order."
+        },
+        {
+          "id": 105,
+          "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+          "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+          "difficulty": "Medium",
+          "idea": "preorder[preStart] is the root; find it in inorder with a HashMap"
+        },
+        {
+          "id": 106,
+          "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+          "slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+          "difficulty": "Medium",
+          "idea": "The last postorder element is the root"
+        },
+        {
+          "id": 116,
+          "title": "Populating Next Right Pointers in Each Node",
+          "slug": "populating-next-right-pointers-in-each-node",
+          "difficulty": "Medium",
+          "idea": "BFS by levels works with O(n) space"
+        },
+        {
+          "id": 199,
+          "title": "Binary Tree Right Side View",
+          "slug": "binary-tree-right-side-view",
+          "difficulty": "Medium",
+          "idea": "Level-order BFS and record the last node of each level"
+        },
+        {
+          "id": 222,
+          "title": "Count Complete Tree Nodes",
+          "slug": "count-complete-tree-nodes",
+          "difficulty": "Medium",
+          "idea": "Simple DFS count is O(n)"
+        },
+        {
+          "id": 230,
+          "title": "Kth Smallest Element in a BST",
+          "slug": "kth-smallest-element-in-a-bst",
+          "difficulty": "Medium",
+          "idea": "Inorder traversal of a BST visits values in sorted order"
+        },
+        {
+          "id": 235,
+          "title": "Lowest Common Ancestor of a Binary Search Tree",
+          "slug": "lowest-common-ancestor-of-a-binary-search-tree",
+          "difficulty": "Medium",
+          "idea": "Use the BST order: if both values are smaller go left, if both are larger go right; otherwise the current node is where they split, so it's the LCA."
+        },
+        {
+          "id": 236,
+          "title": "Lowest Common Ancestor of a Binary Tree",
+          "slug": "lowest-common-ancestor-of-a-binary-tree",
+          "difficulty": "Medium",
+          "idea": "Return the node if it's null, p or q"
+        },
+        {
+          "id": 337,
+          "title": "House Robber III",
+          "slug": "house-robber-iii",
+          "difficulty": "Medium",
+          "idea": "DP on trees: each DFS returns a pair (best if this node is robbed, best if it is not)"
+        },
+        {
+          "id": 863,
+          "title": "All Nodes Distance K in Binary Tree",
+          "slug": "all-nodes-distance-k-in-binary-tree",
+          "difficulty": "Medium",
+          "idea": "A tree is just an undirected graph once you can go upward: record each node's parent, then BFS from the target for k levels with a visited set."
+        },
+        {
+          "id": 1448,
+          "title": "Count Good Nodes in Binary Tree",
+          "slug": "count-good-nodes-in-binary-tree",
+          "difficulty": "Medium",
+          "idea": "DFS passing down the maximum value seen on the path so far; a node is good if node.val >= that max."
+        },
+        {
+          "id": 2385,
+          "title": "Amount of Time for Binary Tree to Be Infected",
+          "slug": "amount-of-time-for-binary-tree-to-be-infected",
+          "difficulty": "Medium",
+          "idea": "Same trick as 'distance K': build parent pointers, BFS from start; the answer is the number of BFS levels minus one."
+        },
+        {
+          "id": 124,
+          "title": "Binary Tree Maximum Path Sum",
+          "slug": "binary-tree-maximum-path-sum",
+          "difficulty": "Hard",
+          "idea": "DFS returns the best downward path starting at a node (node + max(0, left, right)); at each node update the global answer with node + max(0,left) + max(0,right), the path that bends there."
+        },
+        {
+          "id": 297,
+          "title": "Serialize and Deserialize Binary Tree",
+          "slug": "serialize-and-deserialize-binary-tree",
+          "difficulty": "Hard",
+          "idea": "Level-order: write values with a null marker for missing children"
+        },
+        {
+          "id": 987,
+          "title": "Vertical Order Traversal of a Binary Tree",
+          "slug": "vertical-order-traversal-of-a-binary-tree",
+          "difficulty": "Hard",
+          "idea": "BFS or DFS recording (col, row, val)"
+        }
+      ]
+    },
+    {
+      "name": "Tries",
+      "count": 2,
+      "problems": [
+        {
+          "id": 208,
+          "title": "Implement Trie (Prefix Tree)",
+          "slug": "implement-trie-prefix-tree",
+          "difficulty": "Medium",
+          "idea": "Each node has 26 child links and an end-of-word flag"
+        },
+        {
+          "id": 212,
+          "title": "Word Search II",
+          "slug": "word-search-ii",
+          "difficulty": "Hard",
+          "idea": "Insert all words into a trie, then DFS from every cell, moving down the trie in step with the path"
+        }
+      ]
+    },
+    {
+      "name": "Heap / Priority Queue",
+      "count": 9,
+      "problems": [
+        {
+          "id": 703,
+          "title": "Kth Largest Element in a Stream",
+          "slug": "kth-largest-element-in-a-stream",
+          "difficulty": "Easy",
+          "idea": "Keep a min-heap of size k: it holds the k largest values and the top is the kth largest"
+        },
+        {
+          "id": 1046,
+          "title": "Last Stone Weight",
+          "slug": "last-stone-weight",
+          "difficulty": "Easy",
+          "idea": "Max-heap: poll two, push the difference if it's non-zero."
+        },
+        {
+          "id": 215,
+          "title": "Kth Largest Element in an Array",
+          "slug": "kth-largest-element-in-an-array",
+          "difficulty": "Medium",
+          "idea": "Size-k min-heap: O(n log k)"
+        },
+        {
+          "id": 355,
+          "title": "Design Twitter",
+          "slug": "design-twitter",
+          "difficulty": "Medium",
+          "idea": "Store each user's tweets newest-first with a global timestamp"
+        },
+        {
+          "id": 621,
+          "title": "Task Scheduler",
+          "slug": "task-scheduler",
+          "difficulty": "Medium",
+          "idea": "Simulate with a max-heap of remaining counts and a cooldown queue of (count, readyTime): always run the most frequent available task"
+        },
+        {
+          "id": 973,
+          "title": "K Closest Points to Origin",
+          "slug": "k-closest-points-to-origin",
+          "difficulty": "Medium",
+          "idea": "Compare squared distances (no sqrt)"
+        },
+        {
+          "id": 1792,
+          "title": "Maximum Average Pass Ratio",
+          "slug": "maximum-average-pass-ratio",
+          "difficulty": "Medium",
+          "idea": "Greedy with a max-heap ordered by the gain (p+1)/(t+1) - p/t"
+        },
+        {
+          "id": 23,
+          "title": "Merge k Sorted Lists",
+          "slug": "merge-k-sorted-lists",
+          "difficulty": "Hard",
+          "idea": "Min-heap of the k list heads: pop the smallest, append it, push its next node"
+        },
+        {
+          "id": 295,
+          "title": "Find Median from Data Stream",
+          "slug": "find-median-from-data-stream",
+          "difficulty": "Hard",
+          "idea": "Two heaps: a max-heap for the smaller half and a min-heap for the larger half"
+        }
+      ]
+    },
+    {
+      "name": "Backtracking",
+      "count": 11,
+      "problems": [
+        {
+          "id": 17,
+          "title": "Letter Combinations of a Phone Number",
+          "slug": "letter-combinations-of-a-phone-number",
+          "difficulty": "Medium",
+          "idea": "Backtracking: at index i, loop over the letters of digits[i], append one, recurse to i+1, then remove it."
+        },
+        {
+          "id": 22,
+          "title": "Generate Parentheses",
+          "slug": "generate-parentheses",
+          "difficulty": "Medium",
+          "idea": "Backtrack on counts: add '(' while open < n, add ')' while close < open"
+        },
+        {
+          "id": 39,
+          "title": "Combination Sum",
+          "slug": "combination-sum",
+          "difficulty": "Medium",
+          "idea": "Backtracking with 'take (stay on same index)' or 'skip (move to next index)'"
+        },
+        {
+          "id": 40,
+          "title": "Combination Sum II",
+          "slug": "combination-sum-ii",
+          "difficulty": "Medium",
+          "idea": "Sort, then in the for-loop skip candidates[k] == candidates[k-1] when k > start: the same value is never chosen twice at the same depth"
+        },
+        {
+          "id": 46,
+          "title": "Permutations",
+          "slug": "permutations",
+          "difficulty": "Medium",
+          "idea": "Backtracking: at each level pick any unused number (a boolean[] or set of used values), recurse, then un-pick it"
+        },
+        {
+          "id": 78,
+          "title": "Subsets",
+          "slug": "subsets",
+          "difficulty": "Medium",
+          "idea": "For each element choose take or skip (2^n leaves)"
+        },
+        {
+          "id": 79,
+          "title": "Word Search",
+          "slug": "word-search",
+          "difficulty": "Medium",
+          "idea": "DFS backtracking from each matching start cell"
+        },
+        {
+          "id": 90,
+          "title": "Subsets II",
+          "slug": "subsets-ii",
+          "difficulty": "Medium",
+          "idea": "Sort first"
+        },
+        {
+          "id": 131,
+          "title": "Palindrome Partitioning",
+          "slug": "palindrome-partitioning",
+          "difficulty": "Medium",
+          "idea": "Backtracking: from index start, try every end where s[start..end] is a palindrome, add it, and recurse from end+1."
+        },
+        {
+          "id": 37,
+          "title": "Sudoku Solver",
+          "slug": "sudoku-solver",
+          "difficulty": "Hard",
+          "idea": "Backtracking: find the next empty cell, try 1-9 if valid in its row, column and 3x3 box, recurse, and undo on failure"
+        },
+        {
+          "id": 51,
+          "title": "N-Queens",
+          "slug": "n-queens",
+          "difficulty": "Hard",
+          "idea": "Place one queen per column with backtracking"
+        }
+      ]
+    },
+    {
+      "name": "Graphs: BFS / DFS",
+      "count": 10,
+      "problems": [
+        {
+          "id": 463,
+          "title": "Island Perimeter",
+          "slug": "island-perimeter",
+          "difficulty": "Easy",
+          "idea": "Each land cell contributes 4 minus its number of land neighbours, so a plain double loop is enough"
+        },
+        {
+          "id": 130,
+          "title": "Surrounded Regions",
+          "slug": "surrounded-regions",
+          "difficulty": "Medium",
+          "idea": "Reverse thinking: DFS from every border 'O' and mark it safe"
+        },
+        {
+          "id": 133,
+          "title": "Clone Graph",
+          "slug": "clone-graph",
+          "difficulty": "Medium",
+          "idea": "DFS with a map original -> clone"
+        },
+        {
+          "id": 200,
+          "title": "Number of Islands",
+          "slug": "number-of-islands",
+          "difficulty": "Medium",
+          "idea": "Scan the grid; each unvisited land cell starts a new island"
+        },
+        {
+          "id": 417,
+          "title": "Pacific Atlantic Water Flow",
+          "slug": "pacific-atlantic-water-flow",
+          "difficulty": "Medium",
+          "idea": "Reverse the flow: DFS uphill from every Pacific border cell and from every Atlantic border cell, marking what each ocean can reach"
+        },
+        {
+          "id": 695,
+          "title": "Max Area of Island",
+          "slug": "max-area-of-island",
+          "difficulty": "Medium",
+          "idea": "Flood-fill each unvisited land cell (DFS or BFS) and count the cells reached; keep the maximum."
+        },
+        {
+          "id": 785,
+          "title": "Is Graph Bipartite?",
+          "slug": "is-graph-bipartite",
+          "difficulty": "Medium",
+          "idea": "Two-colour the graph with BFS or DFS: give neighbours the opposite colour"
+        },
+        {
+          "id": 994,
+          "title": "Rotting Oranges",
+          "slug": "rotting-oranges",
+          "difficulty": "Medium",
+          "idea": "Multi-source BFS: put every initially rotten orange in the queue at time 0"
+        },
+        {
+          "id": 1091,
+          "title": "Shortest Path in Binary Matrix",
+          "slug": "shortest-path-in-binary-matrix",
+          "difficulty": "Medium",
+          "idea": "Unweighted shortest path means BFS"
+        },
+        {
+          "id": 815,
+          "title": "Bus Routes",
+          "slug": "bus-routes",
+          "difficulty": "Hard",
+          "idea": "BFS over buses, not stops"
+        }
+      ]
+    },
+    {
+      "name": "Advanced Graphs",
+      "count": 11,
+      "problems": [
+        {
+          "id": 207,
+          "title": "Course Schedule",
+          "slug": "course-schedule",
+          "difficulty": "Medium",
+          "idea": "It's possible exactly when the prerequisite graph has no cycle"
+        },
+        {
+          "id": 210,
+          "title": "Course Schedule II",
+          "slug": "course-schedule-ii",
+          "difficulty": "Medium",
+          "idea": "Kahn's algorithm: the order nodes leave the queue is a topological order"
+        },
+        {
+          "id": 684,
+          "title": "Redundant Connection",
+          "slug": "redundant-connection",
+          "difficulty": "Medium",
+          "idea": "Union-find: process edges in order"
+        },
+        {
+          "id": 743,
+          "title": "Network Delay Time",
+          "slug": "network-delay-time",
+          "difficulty": "Medium",
+          "idea": "Single-source shortest paths with non-negative weights: Dijkstra with a min-heap"
+        },
+        {
+          "id": 787,
+          "title": "Cheapest Flights Within K Stops",
+          "slug": "cheapest-flights-within-k-stops",
+          "difficulty": "Medium",
+          "idea": "Plain Dijkstra fails because a cheaper path may use too many stops"
+        },
+        {
+          "id": 802,
+          "title": "Find Eventual Safe States",
+          "slug": "find-eventual-safe-states",
+          "difficulty": "Medium",
+          "idea": "Reverse every edge; terminal nodes now have in-degree 0"
+        },
+        {
+          "id": 947,
+          "title": "Most Stones Removed with Same Row or Column",
+          "slug": "most-stones-removed-with-same-row-or-column",
+          "difficulty": "Medium",
+          "idea": "Stones sharing a row or column form connected components, and each component can be reduced to one stone"
+        },
+        {
+          "id": 1319,
+          "title": "Number of Operations to Make Network Connected",
+          "slug": "number-of-operations-to-make-network-connected",
+          "difficulty": "Medium",
+          "idea": "Union-find: every edge joining two already-connected nodes is a spare cable"
+        },
+        {
+          "id": 1584,
+          "title": "Min Cost to Connect All Points",
+          "slug": "min-cost-to-connect-all-points",
+          "difficulty": "Medium",
+          "idea": "Minimum spanning tree"
+        },
+        {
+          "id": 127,
+          "title": "Word Ladder",
+          "slug": "word-ladder",
+          "difficulty": "Hard",
+          "idea": "BFS over words"
+        },
+        {
+          "id": 778,
+          "title": "Swim in Rising Water",
+          "slug": "swim-in-rising-water",
+          "difficulty": "Hard",
+          "idea": "Minimise the maximum elevation along a path: Dijkstra-like search with a min-heap keyed by the max height so far"
+        }
+      ]
+    },
+    {
+      "name": "1-D Dynamic Programming",
+      "count": 12,
+      "problems": [
+        {
+          "id": 70,
+          "title": "Climbing Stairs",
+          "slug": "climbing-stairs",
+          "difficulty": "Easy",
+          "idea": "ways(n) = ways(n-1) + ways(n-2): it's Fibonacci"
+        },
+        {
+          "id": 118,
+          "title": "Pascal's Triangle",
+          "slug": "pascals-triangle",
+          "difficulty": "Easy",
+          "idea": "Each inner entry is the sum of the two above it: row[j] = prev[j-1] + prev[j]"
+        },
+        {
+          "id": 509,
+          "title": "Fibonacci Number",
+          "slug": "fibonacci-number",
+          "difficulty": "Easy",
+          "idea": "Plain recursion is O(2^n) because subproblems repeat"
+        },
+        {
+          "id": 746,
+          "title": "Min Cost Climbing Stairs",
+          "slug": "min-cost-climbing-stairs",
+          "difficulty": "Easy",
+          "idea": "f(i) = min(f(i-1) + cost[i-1], f(i-2) + cost[i-2]) with f(0) = f(1) = 0."
+        },
+        {
+          "id": 53,
+          "title": "Maximum Subarray",
+          "slug": "maximum-subarray",
+          "difficulty": "Medium",
+          "idea": "Kadane's algorithm: keep a running sum, record the max, and reset the sum to 0 when it goes negative (a negative prefix only hurts)."
+        },
+        {
+          "id": 91,
+          "title": "Decode Ways",
+          "slug": "decode-ways",
+          "difficulty": "Medium",
+          "idea": "ways(i) = ways(i+1) if s[i] != '0', plus ways(i+2) if s[i..i+1] is between 10 and 26"
+        },
+        {
+          "id": 139,
+          "title": "Word Break",
+          "slug": "word-break",
+          "difficulty": "Medium",
+          "idea": "dp[i] = true if some word matches s starting at i and dp[i + len] is true; dp[n] = true"
+        },
+        {
+          "id": 152,
+          "title": "Maximum Product Subarray",
+          "slug": "maximum-product-subarray",
+          "difficulty": "Medium",
+          "idea": "A negative number flips max and min, so track both the max and min product ending here"
+        },
+        {
+          "id": 198,
+          "title": "House Robber",
+          "slug": "house-robber",
+          "difficulty": "Medium",
+          "idea": "dp[i] = max(nums[i] + dp[i-2] (rob it), dp[i-1] (skip it))"
+        },
+        {
+          "id": 213,
+          "title": "House Robber II",
+          "slug": "house-robber-ii",
+          "difficulty": "Medium",
+          "idea": "You can't take both the first and last house, so answer = max(rob(nums[0..n-2]), rob(nums[1..n-1])) using the linear House Robber."
+        },
+        {
+          "id": 300,
+          "title": "Longest Increasing Subsequence",
+          "slug": "longest-increasing-subsequence",
+          "difficulty": "Medium",
+          "idea": "DP over (index, previous index): take nums[i] if it's larger than the previous, or skip it"
+        },
+        {
+          "id": 322,
+          "title": "Coin Change",
+          "slug": "coin-change",
+          "difficulty": "Medium",
+          "idea": "Unbounded knapsack: for coin i either skip it (i-1) or take it and stay at i"
+        }
+      ]
+    },
+    {
+      "name": "2-D Dynamic Programming",
+      "count": 15,
+      "problems": [
+        {
+          "id": 62,
+          "title": "Unique Paths",
+          "slug": "unique-paths",
+          "difficulty": "Medium",
+          "idea": "paths(i, j) = paths(i-1, j) + paths(i, j-1), with the first row and column all 1"
+        },
+        {
+          "id": 63,
+          "title": "Unique Paths II",
+          "slug": "unique-paths-ii",
+          "difficulty": "Medium",
+          "idea": "Same recurrence, but an obstacle cell has 0 paths"
+        },
+        {
+          "id": 64,
+          "title": "Minimum Path Sum",
+          "slug": "minimum-path-sum",
+          "difficulty": "Medium",
+          "idea": "dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])"
+        },
+        {
+          "id": 72,
+          "title": "Edit Distance",
+          "slug": "edit-distance",
+          "difficulty": "Medium",
+          "idea": "f(i, j): if chars match, f(i-1, j-1); else 1 + min(insert f(i, j-1), delete f(i-1, j), replace f(i-1, j-1))"
+        },
+        {
+          "id": 120,
+          "title": "Triangle",
+          "slug": "triangle",
+          "difficulty": "Medium",
+          "idea": "Go bottom-up: dp[j] = tri[i][j] + min(dp[j], dp[j+1]) starting from the last row"
+        },
+        {
+          "id": 416,
+          "title": "Partition Equal Subset Sum",
+          "slug": "partition-equal-subset-sum",
+          "difficulty": "Medium",
+          "idea": "If the total is odd, it's impossible"
+        },
+        {
+          "id": 494,
+          "title": "Target Sum",
+          "slug": "target-sum",
+          "difficulty": "Medium",
+          "idea": "Memoise (index, running sum)"
+        },
+        {
+          "id": 516,
+          "title": "Longest Palindromic Subsequence",
+          "slug": "longest-palindromic-subsequence",
+          "difficulty": "Medium",
+          "idea": "A palindromic subsequence reads the same reversed, so the answer = LCS(s, reverse(s))."
+        },
+        {
+          "id": 518,
+          "title": "Coin Change II",
+          "slug": "coin-change-ii",
+          "difficulty": "Medium",
+          "idea": "Counting version of unbounded knapsack: ways(i, a) = ways(i-1, a) + ways(i, a - coins[i])"
+        },
+        {
+          "id": 583,
+          "title": "Delete Operation for Two Strings",
+          "slug": "delete-operation-for-two-strings",
+          "difficulty": "Medium",
+          "idea": "Whatever survives is a common subsequence, so keep the longest one: answer = len1 + len2 - 2 * LCS."
+        },
+        {
+          "id": 931,
+          "title": "Minimum Falling Path Sum",
+          "slug": "minimum-falling-path-sum",
+          "difficulty": "Medium",
+          "idea": "dp[i][j] = matrix[i][j] + min(dp[i-1][j-1], dp[i-1][j], dp[i-1][j+1])"
+        },
+        {
+          "id": 1143,
+          "title": "Longest Common Subsequence",
+          "slug": "longest-common-subsequence",
+          "difficulty": "Medium",
+          "idea": "f(i, j) = 1 + f(i-1, j-1) if chars match, else max(f(i-1, j), f(i, j-1))"
+        },
+        {
+          "id": 115,
+          "title": "Distinct Subsequences",
+          "slug": "distinct-subsequences",
+          "difficulty": "Hard",
+          "idea": "f(i, j) = ways using s[0..i) to form t[0..j)"
+        },
+        {
+          "id": 1092,
+          "title": "Shortest Common Supersequence ",
+          "slug": "shortest-common-supersequence",
+          "difficulty": "Hard",
+          "idea": "Build the LCS table, then walk back from (n, m): on a match emit the character once; otherwise emit the character from the side you step away from"
+        },
+        {
+          "id": 1312,
+          "title": "Minimum Insertion Steps to Make a String Palindrome",
+          "slug": "minimum-insertion-steps-to-make-a-string-palindrome",
+          "difficulty": "Hard",
+          "idea": "Keep the longest palindromic subsequence and insert a partner for every other character: answer = n - LPS = n - LCS(s, reverse(s))."
+        }
+      ]
+    },
+    {
+      "name": "Greedy",
+      "count": 10,
+      "problems": [
+        {
+          "id": 3014,
+          "title": "Minimum Number of Pushes to Type Word I",
+          "slug": "minimum-number-of-pushes-to-type-word-i",
+          "difficulty": "Easy",
+          "idea": "8 keys: the first 8 letters cost 1 push each, the next 8 cost 2, and so on"
+        },
+        {
+          "id": 45,
+          "title": "Jump Game II",
+          "slug": "jump-game-ii",
+          "difficulty": "Medium",
+          "idea": "BFS by windows: [l, r] are the indices reachable with 'jumps' jumps; the next window ends at the farthest i + nums[i] from the current window."
+        },
+        {
+          "id": 55,
+          "title": "Jump Game",
+          "slug": "jump-game",
+          "difficulty": "Medium",
+          "idea": "Walk backwards keeping a 'goal': if i + nums[i] >= goal, then i can reach it and becomes the new goal"
+        },
+        {
+          "id": 122,
+          "title": "Best Time to Buy and Sell Stock II",
+          "slug": "best-time-to-buy-and-sell-stock-ii",
+          "difficulty": "Medium",
+          "idea": "Greedy: every upward step prices[i+1] > prices[i] can be captured, so sum all positive day-to-day differences."
+        },
+        {
+          "id": 134,
+          "title": "Gas Station",
+          "slug": "gas-station",
+          "difficulty": "Medium",
+          "idea": "If total gas < total cost, it's impossible"
+        },
+        {
+          "id": 763,
+          "title": "Partition Labels",
+          "slug": "partition-labels",
+          "difficulty": "Medium",
+          "idea": "Record each letter's last index"
+        },
+        {
+          "id": 846,
+          "title": "Hand of Straights",
+          "slug": "hand-of-straights",
+          "difficulty": "Medium",
+          "idea": "The smallest remaining card must start a group"
+        },
+        {
+          "id": 1899,
+          "title": "Merge Triplets to Form Target Triplet",
+          "slug": "merge-triplets-to-form-target-triplet",
+          "difficulty": "Medium",
+          "idea": "Ignore any triplet with a value larger than the target in some position (it would overshoot)"
+        },
+        {
+          "id": 3457,
+          "title": "Eat Pizzas!",
+          "slug": "eat-pizzas",
+          "difficulty": "Medium",
+          "idea": "Sort"
+        },
+        {
+          "id": 135,
+          "title": "Candy",
+          "slug": "candy",
+          "difficulty": "Hard",
+          "idea": "Two passes: left-to-right satisfies the left neighbour rule, right-to-left satisfies the right one; each child gets the max of the two requirements."
+        }
+      ]
+    },
+    {
+      "name": "Intervals",
+      "count": 3,
+      "problems": [
+        {
+          "id": 56,
+          "title": "Merge Intervals",
+          "slug": "merge-intervals",
+          "difficulty": "Medium",
+          "idea": "Sort by start"
+        },
+        {
+          "id": 57,
+          "title": "Insert Interval",
+          "slug": "insert-interval",
+          "difficulty": "Medium",
+          "idea": "Three phases in one pass: copy intervals ending before the new one starts; merge all that overlap it (min start, max end); copy the rest."
+        },
+        {
+          "id": 435,
+          "title": "Non-overlapping Intervals",
+          "slug": "non-overlapping-intervals",
+          "difficulty": "Medium",
+          "idea": "Greedy: sort by start; on overlap, remove one and keep the interval with the smaller end (it leaves more room)"
+        }
+      ]
+    },
+    {
+      "name": "Math & Geometry / Matrix",
+      "count": 13,
+      "problems": [
+        {
+          "id": 9,
+          "title": "Palindrome Number",
+          "slug": "palindrome-number",
+          "difficulty": "Easy",
+          "idea": "Reverse the digits arithmetically (rev = rev*10 + x%10) and compare"
+        },
+        {
+          "id": 13,
+          "title": "Roman to Integer",
+          "slug": "roman-to-integer",
+          "difficulty": "Easy",
+          "idea": "Scan left to right: if a symbol is smaller than the one after it (IV, IX, XL, ...), subtract it; otherwise add it."
+        },
+        {
+          "id": 66,
+          "title": "Plus One",
+          "slug": "plus-one",
+          "difficulty": "Easy",
+          "idea": "From the right: if a digit is < 9, increment it and return"
+        },
+        {
+          "id": 171,
+          "title": "Excel Sheet Column Number",
+          "slug": "excel-sheet-column-number",
+          "difficulty": "Easy",
+          "idea": "It's base-26 with digits 1..26: result = result * 26 + (c - 'A' + 1), scanning left to right."
+        },
+        {
+          "id": 202,
+          "title": "Happy Number",
+          "slug": "happy-number",
+          "difficulty": "Easy",
+          "idea": "Either it reaches 1 or enters a cycle"
+        },
+        {
+          "id": 326,
+          "title": "Power of Three",
+          "slug": "power-of-three",
+          "difficulty": "Easy",
+          "idea": "Divide by 3 while divisible and check whether you reach 1"
+        },
+        {
+          "id": 412,
+          "title": "Fizz Buzz",
+          "slug": "fizz-buzz",
+          "difficulty": "Easy",
+          "idea": "Check the combined case (3 and 5) first."
+        },
+        {
+          "id": 7,
+          "title": "Reverse Integer",
+          "slug": "reverse-integer",
+          "difficulty": "Medium",
+          "idea": "Pop digits with % 10 and push with result*10 + digit"
+        },
+        {
+          "id": 8,
+          "title": "String to Integer (atoi)",
+          "slug": "string-to-integer-atoi",
+          "difficulty": "Medium",
+          "idea": "A careful state walk"
+        },
+        {
+          "id": 48,
+          "title": "Rotate Image",
+          "slug": "rotate-image",
+          "difficulty": "Medium",
+          "idea": "Clockwise rotation = transpose (swap m[i][j] with m[j][i] for j > i), then reverse each row."
+        },
+        {
+          "id": 54,
+          "title": "Spiral Matrix",
+          "slug": "spiral-matrix",
+          "difficulty": "Medium",
+          "idea": "Keep four boundaries (top, bottom, left, right)"
+        },
+        {
+          "id": 73,
+          "title": "Set Matrix Zeroes",
+          "slug": "set-matrix-zeroes",
+          "difficulty": "Medium",
+          "idea": "O(m+n) space: separate row and column flag arrays"
+        },
+        {
+          "id": 3021,
+          "title": "Alice and Bob Playing Flower Game",
+          "slug": "alice-and-bob-playing-flower-game",
+          "difficulty": "Medium",
+          "idea": "Alice wins exactly when x + y is odd, i.e"
+        }
+      ]
+    },
+    {
+      "name": "Bit Manipulation",
+      "count": 6,
+      "problems": [
+        {
+          "id": 136,
+          "title": "Single Number",
+          "slug": "single-number",
+          "difficulty": "Easy",
+          "idea": "XOR everything: x ^ x = 0 and x ^ 0 = x, so pairs cancel and the single value remains."
+        },
+        {
+          "id": 190,
+          "title": "Reverse Bits",
+          "slug": "reverse-bits",
+          "difficulty": "Easy",
+          "idea": "32 times: result = (result << 1) / (n & 1); n >>>= 1"
+        },
+        {
+          "id": 191,
+          "title": "Number of 1 Bits",
+          "slug": "number-of-1-bits",
+          "difficulty": "Easy",
+          "idea": "Check each of the 32 bits with a mask"
+        },
+        {
+          "id": 268,
+          "title": "Missing Number",
+          "slug": "missing-number",
+          "difficulty": "Easy",
+          "idea": "XOR all indices 0..n with all values; pairs cancel (x ^ x = 0), leaving the missing number"
+        },
+        {
+          "id": 1863,
+          "title": "Sum of All Subset XOR Totals",
+          "slug": "sum-of-all-subset-xor-totals",
+          "difficulty": "Easy",
+          "idea": "Enumerate all 2^n masks and XOR the chosen elements"
+        },
+        {
+          "id": 260,
+          "title": "Single Number III",
+          "slug": "single-number-iii",
+          "difficulty": "Medium",
+          "idea": "XOR all gives a ^ b (non-zero)"
+        }
+      ]
+    },
+    {
+      "name": "SQL",
+      "count": 13,
+      "problems": [
+        {
+          "id": 182,
+          "title": "Duplicate Emails",
+          "slug": "duplicate-emails",
+          "difficulty": "Easy",
+          "idea": "GROUP BY email HAVING COUNT(*) > 1"
+        },
+        {
+          "id": 197,
+          "title": "Rising Temperature",
+          "slug": "rising-temperature",
+          "difficulty": "Easy",
+          "idea": "Self-join Weather on DATEDIFF(w2.recordDate, w1.recordDate) = 1 and compare temperatures"
+        },
+        {
+          "id": 584,
+          "title": "Find Customer Referee",
+          "slug": "find-customer-referee",
+          "difficulty": "Easy",
+          "idea": "NULL != 2 evaluates to UNKNOWN, not TRUE, so you must add 'OR referee_id IS NULL' explicitly."
+        },
+        {
+          "id": 586,
+          "title": "Customer Placing the Largest Number of Orders",
+          "slug": "customer-placing-the-largest-number-of-orders",
+          "difficulty": "Easy",
+          "idea": "GROUP BY customer, ORDER BY COUNT(*) DESC, LIMIT 1."
+        },
+        {
+          "id": 595,
+          "title": "Big Countries",
+          "slug": "big-countries",
+          "difficulty": "Easy",
+          "idea": "Simple WHERE with OR"
+        },
+        {
+          "id": 1068,
+          "title": "Product Sales Analysis I",
+          "slug": "product-sales-analysis-i",
+          "difficulty": "Easy",
+          "idea": "INNER JOIN Sales and Product on product_id, then select the needed columns."
+        },
+        {
+          "id": 1148,
+          "title": "Article Views I",
+          "slug": "article-views-i",
+          "difficulty": "Easy",
+          "idea": "Filter author_id = viewer_id, use DISTINCT to remove duplicates, alias the column and ORDER BY."
+        },
+        {
+          "id": 1378,
+          "title": "Replace Employee ID With The Unique Identifier",
+          "slug": "replace-employee-id-with-the-unique-identifier",
+          "difficulty": "Easy",
+          "idea": "LEFT JOIN keeps every employee even when there's no matching EmployeeUNI row."
+        },
+        {
+          "id": 1581,
+          "title": "Customer Who Visited but Did Not Make Any Transactions",
+          "slug": "customer-who-visited-but-did-not-make-any-transactions",
+          "difficulty": "Easy",
+          "idea": "Keep visits whose visit_id is NOT IN the Transactions table (or LEFT JOIN and test for NULL), then GROUP BY customer."
+        },
+        {
+          "id": 1661,
+          "title": "Average Time of Process per Machine",
+          "slug": "average-time-of-process-per-machine",
+          "difficulty": "Easy",
+          "idea": "Self-join the table: one alias for 'start' rows and one for 'end' rows on the same machine+process, then GROUP BY machine and AVG the difference."
+        },
+        {
+          "id": 1683,
+          "title": "Invalid Tweets",
+          "slug": "invalid-tweets",
+          "difficulty": "Easy",
+          "idea": "WHERE LENGTH(content) > 15"
+        },
+        {
+          "id": 1757,
+          "title": "Recyclable and Low Fat Products",
+          "slug": "recyclable-and-low-fat-products",
+          "difficulty": "Easy",
+          "idea": "Simple WHERE with AND."
+        },
+        {
+          "id": 176,
+          "title": "Second Highest Salary",
+          "slug": "second-highest-salary",
+          "difficulty": "Medium",
+          "idea": "MAX(salary) WHERE salary < (SELECT MAX(salary))"
+        }
+      ]
+    }
+  ]
+}
