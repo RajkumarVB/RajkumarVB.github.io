@@ -109,6 +109,7 @@ export function Sidebar({ hasResume, hasPhoto }: { hasResume: boolean; hasPhoto:
         {links.email && (
           <Link
             href="/#contact"
+            data-track="get-in-touch"
             className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
           >
             Get in touch

@@ -3,6 +3,7 @@ import leetcode from "@/data/leetcode.json";
 import { education, experience, site } from "@/data/site";
 import { getPosts, getProjects } from "@/lib/content";
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Home() {
   const projects = getProjects().slice(0, 4);
@@ -75,6 +76,15 @@ export default function Home() {
           I&apos;m based in {site.location} and open to {site.openTo}. The quickest way to reach me is email or LinkedIn.
         </p>
         <ContactCards links={site.links} />
+        {site.web3formsKey && (
+          <div className="mt-10">
+            <h3 className="mb-2 font-semibold text-slate-900 dark:text-slate-100">Hiring? Leave your details</h3>
+            <p className="mb-4 max-w-2xl leading-relaxed">
+              Share how to reach you and what you&apos;re hiring for, and I&apos;ll get back to you.
+            </p>
+            <ContactForm accessKey={site.web3formsKey} />
+          </div>
+        )}
       </section>
     </div>
   );

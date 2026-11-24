@@ -22,6 +22,12 @@ export const site = {
     email: "rajkumarvb.career@gmail.com", // leave empty to hide
     leetcode: "https://leetcode.com/Rajkumar003/",
   },
+  // Visitor analytics. Your GoatCounter site code, e.g. "rajkumarvb" for
+  // rajkumarvb.goatcounter.com. Leave empty to turn analytics and the view counter off.
+  goatcounter: "",
+  // Recruiter contact form. The access key from web3forms.com (it is public by
+  // design); messages go to the email you registered it with. Leave empty to hide the form.
+  web3formsKey: "1c352d7c-7683-4ed5-bcd1-a3faf5328cdd",
   // Paragraphs for the About section.
   about: [
     "I'm a backend-focused software engineer with 4+ years at Societe Generale, building internal platforms used by compliance teams across the bank.",

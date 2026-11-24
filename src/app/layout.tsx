@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics, ViewCount } from "@/components/Analytics";
 import { BackToTop } from "@/components/BackToTop";
 import { Sidebar } from "@/components/Sidebar";
 import { themeScript } from "@/components/ThemeToggle";
@@ -44,10 +45,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <a className="underline hover:text-slate-900 dark:hover:text-slate-100" href={`${site.links.github}/RajkumarVB.github.io`}>
                 Source
               </a>
+              {site.goatcounter && (
+                <>
+                  {" · "}
+                  <ViewCount code={site.goatcounter} />
+                </>
+              )}
             </footer>
           </main>
         </div>
         <BackToTop />
+        {site.goatcounter && <Analytics code={site.goatcounter} />}
       </body>
     </html>
   );
