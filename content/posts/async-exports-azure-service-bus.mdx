@@ -74,4 +74,6 @@ If a request regularly takes longer than a few seconds, ask whether the user rea
 response. Often they only need to know the work has started. Return **202**, record the job, and let a worker
 finish it. The pattern is the same whatever the queue: Service Bus, SQS, RabbitMQ or Kafka.
 
-The full project write-up is on the [Cross-Border project page](/projects/cross-border-platform/).
+The full project write-up is on the [Cross-Border project page](/projects/cross-border-platform/). If you want to
+see the pattern in code, I rebuilt it as a small, runnable Spring Boot service:
+[async-export-demo on GitHub](https://github.com/RajkumarVB/async-export-demo).
