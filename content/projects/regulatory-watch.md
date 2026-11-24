@@ -2,7 +2,7 @@
 title: "Regulatory Watch"
 company: "Societe Generale"
 role: "Software Engineer"
-period: ""
+period: "2024 – Present"
 featured: true
 order: 3
 tech: [Python, Flask, Selenium, Chromium, APScheduler, PostgreSQL, Microsoft Graph API, MJML, Docker, AKS, GitHub Actions]

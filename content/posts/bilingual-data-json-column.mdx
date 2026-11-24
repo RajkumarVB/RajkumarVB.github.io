@@ -1,0 +1,59 @@
+---
+title: "Storing English and French in PostgreSQL without doubling every table"
+date: 2026-11-23
+summary: "Why we kept translations in one JSON column per table instead of a _fr copy of every text column or a runtime translation API, and the trade-offs that came with it."
+tags: [Backend, Databases, PostgreSQL, System design]
+---
+
+Group Breach Register is the bank's company-wide platform for logging compliance breaches. I owned its
+backend when we rebuilt it on Spring Boot and React, and it went live in November 2026. One requirement
+looked small and turned into one of the most interesting design decisions: the platform had to be fully
+available in **English and French**.
+
+## Three options
+
+**1. Translate at runtime.** Call a translation API whenever a page loads. It's the least work up front,
+but every response now depends on an outside service, adds latency, and shows machine translation to
+compliance users who need wording they can rely on.
+
+**2. Add a `_fr` column next to every text column.** `name`, `name_fr`, `description`, `description_fr`.
+Simple to query, but it doubles the width of many tables, and adding a third language means a schema
+migration on every one of them.
+
+**3. Keep English in the regular columns and put translations in one JSON column.** This is what we chose.
+
+## What it looks like
+
+English stays where it always was. Each table that has translatable text gets a single JSON column, keyed
+by language code:
+
+```json
+{ "fr": { "name": "Formation obligatoire", "description": "..." } }
+```
+
+When a user switches to French, the API reads the French values from that column instead of the English
+columns. Adding Chinese would mean adding a `"zh"` key to the data. It needs **no
+schema change and no code change** to the tables.
+
+## The trade-offs
+
+Nothing here is free, and these are the costs we accepted:
+
+- **Weaker database constraints.** A plain column can be `NOT NULL` with a length limit. A field inside JSON
+  can't be checked as easily, so **validation lives in the application layer**.
+- **Keeping languages in sync.** When someone edits the English text, the French text has to be updated
+  too. The write paths have to treat both languages as one change.
+- **Harder ad hoc queries.** Searching or sorting on a translated field is less convenient than on a normal
+  column.
+
+In return, responses stay fast and predictable, there's no runtime dependency on an outside service, and
+users see wording that a person has reviewed.
+
+## Takeaway
+
+The question to ask was not "how do we translate this?" but "**where should the translations live, and who
+owns them?**" Once we decided they were data that people review and own, storing them next to the rest of
+the data, in a shape that doesn't grow with every new language, followed naturally.
+
+More on the platform, including the configurable scoring engine and access control, is on the
+[Group Breach Register project page](/projects/group-breach-register/).

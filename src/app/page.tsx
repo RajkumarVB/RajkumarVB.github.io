@@ -72,7 +72,7 @@ export default function Home() {
       <section className="reveal" aria-labelledby="contact">
         <SectionHeading id="contact">Contact</SectionHeading>
         <p className="mb-6 max-w-2xl leading-relaxed">
-          I&apos;m open to backend and software engineering roles. The quickest way to reach me is email or LinkedIn.
+          I&apos;m based in {site.location} and open to {site.openTo}. The quickest way to reach me is email or LinkedIn.
         </p>
         <ContactCards links={site.links} />
       </section>

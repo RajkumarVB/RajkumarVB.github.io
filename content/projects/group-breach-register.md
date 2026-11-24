@@ -2,7 +2,7 @@
 title: "Group Breach Register"
 company: "Societe Generale"
 role: "Software Engineer (Backend)"
-period: "Jan 2026 – Dec 2026"
+period: "Jan 2026 – Present"
 featured: true
 order: 1
 tech: [Java, Spring Boot, Spring Security, PostgreSQL, Flyway, React, Docker, AKS, Helm, GitHub Actions, Azure Key Vault]
@@ -15,6 +15,7 @@ impact:
   - "Scoring rules configurable from the UI, with no code changes"
   - "85% test coverage"
   - "Sole backend engineer, from API design to production on AKS"
+  - "Live in production since November 2026"
 ---
 
 ## Context
@@ -92,7 +93,7 @@ I first worked on the original Python Flask-Admin application:
 - Every API responds in **under 1 second**. Slow work, like sending emails, runs in the background.
 - **85% test coverage** on the backend.
 - The new React frontend makes richer features possible that the old admin-panel UI couldn't support.
-- Rolling out to production in **December 2026**.
+- Went live in production in **November 2026**.
 
 ## What I learned
 

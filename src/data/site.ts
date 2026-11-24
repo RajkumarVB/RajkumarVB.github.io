@@ -10,6 +10,9 @@ export const site = {
   tagline:
     "I design APIs and backend systems that stay up, and write about what I learn along the way.",
   url: "https://rajkumarvb.github.io",
+  location: "Bengaluru, India",
+  // Shown in the sidebar and the Contact section.
+  openTo: "Backend, Full Stack, Data and AI Engineer roles",
   // Put your PDF at public/resume/Rajkumar-Resume.pdf. The download button
   // only appears once that file exists.
   resumePath: "/resume/Rajkumar-Resume.pdf",
@@ -22,7 +25,7 @@ export const site = {
   // Paragraphs for the About section.
   about: [
     "I'm a backend-focused software engineer with 4+ years at Societe Generale, building internal platforms for the bank's compliance teams.",
-    "Most recently I owned the backend of a full platform migration, moving a legacy Python Flask-Admin application to Java and Spring Boot with a React frontend. I designed the REST APIs and the configurable scoring engine, implemented role-based access control with Spring Security, and took the service to production on Azure Kubernetes Service with Helm and GitHub Actions.",
+    "Most recently I owned the backend of a full platform migration, moving a legacy Python Flask-Admin application to Java and Spring Boot with a React frontend. I designed the REST APIs and the configurable scoring engine, implemented role-based access control with Spring Security, and took the service to production on Azure Kubernetes Service with Helm and GitHub Actions. It went live in November 2026.",
     "I solve DSA problems regularly and keep every accepted solution, grouped by pattern, in a public repo with a study guide.",
   ],
 };
@@ -42,8 +45,8 @@ export const experience: Experience[] = [
     title: "Software Engineer",
     company: "Societe Generale",
     description:
-      "Build internal platforms for compliance teams at Societe Generale Global Solution Centre, Bangalore. Sole backend engineer on the rebuild of Group Breach Register, the company-wide breach platform, from Flask-Admin to Spring Boot on AKS. Backend engineer on Cross-Border (30,000+ users a month), where I made exports asynchronous with Azure Service Bus and led the SQL Server to PostgreSQL migration. Built the configurable Selenium crawling engine behind Regulatory Watch, which monitors 1,500+ regulator websites.",
-    tech: ["Java", "Spring Boot", "Python", "PostgreSQL", "Azure Service Bus", "Selenium", "AKS", "Helm", "GitHub Actions"],
+      "Build internal platforms for compliance teams at Societe Generale Global Solution Centre, Bangalore. Sole backend engineer on the rebuild of Group Breach Register, the company-wide breach platform, from Flask-Admin to Spring Boot on AKS. Backend engineer on Cross-Border (30,000+ users a month), where I made exports asynchronous with Azure Service Bus and led the SQL Server to PostgreSQL migration. Built the configurable Selenium crawling engine behind Regulatory Watch, which monitors 1,500+ regulator websites. Cut PostgreSQL costs by €3,000 a month by right-sizing databases, and automated their provisioning and teardown with Terraform and Infracost.",
+    tech: ["Java", "Spring Boot", "Python", "PostgreSQL", "Azure Service Bus", "Selenium", "AKS", "Helm", "GitHub Actions", "Terraform"],
   },
   {
     period: "Feb 2022 – Jun 2022",
@@ -77,7 +80,7 @@ export const skills: Record<string, string[]> = {
   Languages: ["Java", "SQL", "Python", "TypeScript"],
   Backend: ["Spring Boot", "Spring Security", "Spring Data JPA", "Flask", "REST / OpenAPI", "Flyway", "ShedLock"],
   Data: ["PostgreSQL", "SQL Server", "MySQL", "Azure Blob Storage", "Azure Service Bus"],
-  "Cloud & DevOps": ["Azure", "AKS / Kubernetes", "Helm", "Docker", "GitHub Actions", "Key Vault", "Terraform"],
+  "Cloud & DevOps": ["Azure", "AKS / Kubernetes", "Helm", "Docker", "GitHub Actions", "Key Vault", "Terraform", "Infracost"],
   Crawling: ["Selenium", "Chromium", "XPath", "APScheduler", "Microsoft Graph API"],
   Observability: ["Elasticsearch", "Kibana"],
   Frontend: ["React"],
