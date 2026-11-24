@@ -11,7 +11,7 @@ export const site = {
   resumePath: "/resume/Rajkumar-Resume.pdf",
   links: {
     github: "https://github.com/RajkumarVB",
-    linkedin: "", // e.g. https://www.linkedin.com/in/your-handle
+    linkedin: "https://www.linkedin.com/in/rajkumarvb/",
     email: "", // e.g. you@example.com (leave empty to hide)
   },
   // Paragraphs for the About section.
@@ -37,16 +37,17 @@ export const experience: Experience[] = [
     title: "Software Engineer",
     company: "Societe Generale",
     description:
-      "Build internal platforms for compliance teams. Sole backend engineer on the migration of the company-wide breach management platform from Python Flask-Admin to Spring Boot on AKS: 40–50 REST APIs, configurable scoring, role-based access, Flyway data migration and CI/CD.",
-    tech: ["Java", "Spring Boot", "PostgreSQL", "AKS", "Helm", "GitHub Actions"],
+      "Build internal platforms for compliance teams at Societe Generale Global Solution Centre, Bangalore. Sole backend engineer on the rebuild of Group Breach Register, the company-wide breach platform, from Flask-Admin to Spring Boot on AKS. Backend engineer on Cross-Border (30,000+ users a month), where I made exports asynchronous with Azure Service Bus and led the SQL Server to PostgreSQL migration. Built the configurable Selenium crawling engine behind Regulatory Watch, which monitors 1,500+ regulator websites.",
+    tech: ["Java", "Spring Boot", "Python", "PostgreSQL", "Azure Service Bus", "Selenium", "AKS", "Helm", "GitHub Actions"],
   },
 ];
 
 export const skills: Record<string, string[]> = {
   Languages: ["Java", "SQL", "Python", "TypeScript"],
-  Backend: ["Spring Boot", "Spring Security", "REST / OpenAPI", "Flyway", "ShedLock"],
-  Data: ["PostgreSQL", "MySQL", "Azure Storage"],
-  "Cloud & DevOps": ["Azure", "AKS / Kubernetes", "Helm", "Docker", "GitHub Actions", "Key Vault"],
+  Backend: ["Spring Boot", "Spring Security", "Spring Data JPA", "Flask", "REST / OpenAPI", "Flyway", "ShedLock"],
+  Data: ["PostgreSQL", "SQL Server", "MySQL", "Azure Blob Storage", "Azure Service Bus"],
+  "Cloud & DevOps": ["Azure", "AKS / Kubernetes", "Helm", "Docker", "GitHub Actions", "Key Vault", "Terraform"],
+  Crawling: ["Selenium", "Chromium", "XPath", "APScheduler", "Microsoft Graph API"],
   Observability: ["Elasticsearch", "Kibana"],
   Frontend: ["React"],
 };

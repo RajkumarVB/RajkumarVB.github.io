@@ -1,5 +1,5 @@
 ---
-title: "Compliance Breach Management Platform"
+title: "Group Breach Register"
 company: "Societe Generale"
 role: "Software Engineer (Backend)"
 period: "Jan 2026 – Dec 2026"
@@ -9,7 +9,7 @@ tech: [Java, Spring Boot, Spring Security, PostgreSQL, Flyway, React, Docker, AK
 links:
   github: ""
   demo: ""
-summary: "Migrated the bank's company-wide breach management platform from Python Flask-Admin to Spring Boot and React on Azure Kubernetes Service. I owned the entire backend."
+summary: "The bank's company-wide compliance breach platform (formerly Breach Log). I worked on the original Flask version, then owned the entire backend of its rebuild on Spring Boot and React on Azure Kubernetes Service."
 impact:
   - "40–50 REST APIs, all responding in under 1 second"
   - "Scoring rules configurable from the UI, with no code changes"
@@ -27,9 +27,19 @@ The original application was built on Python Flask-Admin. It struggled as the nu
 users grew, and its admin-panel style made richer frontend features impractical. We rebuilt it on a
 modern stack: a Spring Boot backend, a React frontend, and Azure Kubernetes Service.
 
-The team was two engineers. I owned the backend end to end, and a teammate owned the frontend.
+The platform started as **Breach Log** and was renamed **Group Breach Register** after its company-wide rollout.
 
-## What I built
+For the rebuild, the team was two engineers. I owned the backend end to end, and a teammate owned the frontend.
+
+### Before the rebuild: the Flask version
+
+I first worked on the original Python Flask-Admin application:
+
+- Engineered the **cumulative breach-score engine** for employees, based on breach type, recurrence interval and severity.
+- Led the **rollout to EMEA users**, including region-specific IAM profiles and constraints, compliance-driven refactoring, and a new data extract upload feature.
+- Stack: Python, Flask, Flask-Admin, SQLAlchemy, PostgreSQL, Docker, AKS, Jenkins, Terraform.
+
+## What I built in the rebuild
 
 ### APIs
 - Designed and implemented **40–50 REST endpoints**, documented with **OpenAPI/Swagger** so the

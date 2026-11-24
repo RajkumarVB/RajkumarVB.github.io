@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" font-family="Inter, ui-sans-serif, system-ui, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Cross-Border asynchronous export flow</title>
+  <desc id="d">The user requests an export. The Spring Boot API saves a PENDING job in PostgreSQL, publishes to Azure Service Bus and returns 202 Accepted. A worker consumes the message, reads data and updates the job in PostgreSQL, uploads the CSV or Excel file to Azure Blob Storage, and emails the user a SAS link valid for 2 days through Azure SMTP.</desc>
+  <style>
+    .box{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}
+    .az{fill:#eff6ff;stroke:#93c5fd;stroke-width:1.5}
+    .t{fill:#0f172a;font-size:14px;font-weight:600}
+    .s{fill:#64748b;font-size:11px}
+    .ln{stroke:#64748b;stroke-width:1.6;fill:none}
+    .dash{stroke-dasharray:5 4}
+    .head{fill:#64748b}
+    .lbl{fill:#475569;font-size:11px;paint-order:stroke;stroke:#f8fafc;stroke-width:4px;stroke-linejoin:round}
+    .badge{fill:#2563eb}
+    .bt{fill:#fff;font-size:11px;font-weight:700}
+    @media (prefers-color-scheme: dark){
+      .box{fill:#0f172a;stroke:#334155}
+      .az{fill:#172554;stroke:#1d4ed8}
+      .t{fill:#e2e8f0}.s{fill:#94a3b8}
+      .ln{stroke:#94a3b8}.head{fill:#94a3b8}
+      .lbl{fill:#cbd5e1;stroke:#020617}
+      .badge{fill:#3b82f6}
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="head" d="M0 0L10 5L0 10z"/>
+    </marker>
+  </defs>
+
+  <!-- connectors -->
+  <path class="ln" d="M160 64H238" marker-end="url(#a)"/>
+  <path class="ln dash" d="M240 86H162" marker-end="url(#a)"/>
+  <text class="lbl" x="200" y="104" text-anchor="middle">202 Accepted</text>
+  <path class="ln" d="M325 104V228" marker-end="url(#a)"/>
+  <text class="lbl" x="333" y="170">job: PENDING</text>
+  <path class="ln" d="M410 72H488" marker-end="url(#a)"/>
+  <path class="ln" d="M650 72H728" marker-end="url(#a)"/>
+  <path class="ln" d="M735 104L414 236" marker-start="url(#a)" marker-end="url(#a)"/>
+  <path class="ln" d="M790 104L627 227" marker-end="url(#a)"/>
+  <path class="ln" d="M810 104V228" marker-end="url(#a)"/>
+  <path class="ln" d="M810 294V340H85V106" marker-end="url(#a)"/>
+  <text class="lbl" x="470" y="330" text-anchor="middle">email with SAS link (valid 2 days), user downloads straight from Blob Storage</text>
+
+  <!-- step badges -->
+  <g><circle class="badge" cx="200" cy="64" r="10"/><text class="bt" x="200" y="68" text-anchor="middle">1</text></g>
+  <g><circle class="badge" cx="450" cy="72" r="10"/><text class="bt" x="450" y="76" text-anchor="middle">1</text></g>
+  <g><circle class="badge" cx="690" cy="72" r="10"/><text class="bt" x="690" y="76" text-anchor="middle">2</text></g>
+  <g><circle class="badge" cx="575" cy="169" r="10"/><text class="bt" x="575" y="173" text-anchor="middle">2</text></g>
+  <g><circle class="badge" cx="708" cy="166" r="10"/><text class="bt" x="708" y="170" text-anchor="middle">3</text></g>
+  <g><circle class="badge" cx="810" cy="166" r="10"/><text class="bt" x="810" y="170" text-anchor="middle">4</text></g>
+  <g><circle class="badge" cx="200" cy="340" r="10"/><text class="bt" x="200" y="344" text-anchor="middle">4</text></g>
+
+  <!-- boxes -->
+  <rect class="box" x="10" y="40" width="150" height="64" rx="10"/>
+  <text class="t" x="85" y="68" text-anchor="middle">User</text><text class="s" x="85" y="86" text-anchor="middle">React UI</text>
+
+  <rect class="box" x="240" y="40" width="170" height="64" rx="10"/>
+  <text class="t" x="325" y="68" text-anchor="middle">Export API</text><text class="s" x="325" y="86" text-anchor="middle">Spring Boot on AKS</text>
+
+  <rect class="az" x="490" y="40" width="160" height="64" rx="10"/>
+  <text class="t" x="570" y="68" text-anchor="middle">Azure Service Bus</text><text class="s" x="570" y="86" text-anchor="middle">export queue</text>
+
+  <rect class="box" x="730" y="40" width="160" height="64" rx="10"/>
+  <text class="t" x="810" y="68" text-anchor="middle">Export worker</text><text class="s" x="810" y="86" text-anchor="middle">Spring Boot on AKS</text>
+
+  <rect class="az" x="240" y="230" width="170" height="64" rx="10"/>
+  <text class="t" x="325" y="258" text-anchor="middle">PostgreSQL</text><text class="s" x="325" y="276" text-anchor="middle">export jobs + data</text>
+
+  <rect class="az" x="490" y="230" width="160" height="64" rx="10"/>
+  <text class="t" x="570" y="258" text-anchor="middle">Azure Blob Storage</text><text class="s" x="570" y="276" text-anchor="middle">CSV / Excel files</text>
+
+  <rect class="az" x="730" y="230" width="160" height="64" rx="10"/>
+  <text class="t" x="810" y="258" text-anchor="middle">Azure SMTP</text><text class="s" x="810" y="276" text-anchor="middle">email to user</text>
+</svg>
