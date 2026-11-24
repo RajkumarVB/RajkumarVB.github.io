@@ -97,6 +97,13 @@ export function Sidebar({ hasResume, hasPhoto }: { hasResume: boolean; hasPhoto:
         <Typewriter phrases={site.roles} />
       </p>
       <p className="mt-4 max-w-xs leading-relaxed">{site.tagline}</p>
+      <p className="mt-4 flex items-center gap-1.5 text-sm text-slate-500">
+        <svg aria-hidden width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        {site.location}
+      </p>
+      <p className="mt-1 max-w-xs text-sm text-slate-500">
+        <span className="font-medium text-emerald-600 dark:text-emerald-400">Open to</span> {site.openTo}
+      </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
         {links.email && (

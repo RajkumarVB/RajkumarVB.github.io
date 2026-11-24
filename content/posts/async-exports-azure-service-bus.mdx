@@ -1,0 +1,77 @@
+---
+title: "From timeouts to 202 Accepted: moving large exports to background jobs"
+date: 2026-11-24
+summary: "How we turned a synchronous CSV/Excel export that timed out on big reports into an async job with Azure Service Bus, PostgreSQL and Blob Storage, and cut export tickets from about 50 a week to almost none."
+tags: [Backend, System design, Azure, Spring Boot]
+---
+
+Cross-Border is the internal platform every employee of the bank goes through before travelling abroad. It
+has **30,000+ users a month**, and compliance and management teams regularly export travel data as CSV or
+Excel. This post is about how we fixed those exports.
+
+## The problem
+
+The first version built the file **inside the HTTP request**. The controller queried the data, wrote the
+CSV or Excel file, and streamed it back. That works for a few hundred rows. It doesn't work for 60,000 to
+100,000 rows:
+
+- Large exports hit **request timeouts**, so users waited and then got an error.
+- The support team was getting **about 50 tickets a week** about failed exports.
+
+Making the timeout longer would only have moved the problem. The real issue was that a slow, heavy piece of
+work was tied to a request that a person was watching.
+
+## The design
+
+The fix was to **accept the request quickly and do the work somewhere else**.
+
+![Export flow: the API records the job and returns 202, a worker builds the file, uploads it to Blob Storage, and emails a time-limited SAS link](/images/cross-border-export-flow.svg)
+
+1. **The API records the job.** It saves an export job in PostgreSQL with status `PENDING`, publishes a
+   message to **Azure Service Bus**, and returns **202 Accepted** straight away. The UI tells the user their
+   export is on its way.
+2. **A worker builds the file.** It consumes the message, runs the query, and writes the CSV or Excel file.
+   As it goes, it moves the job from `PROCESSING` to `DONE` or `FAILED` in PostgreSQL.
+3. **The file goes to Azure Blob Storage**, not through the web tier.
+4. **The user gets a link by email.** The worker creates a **SAS link valid for 2 days** and emails it. The
+   link expires on its own, so old exports aren't left open.
+
+In simplified form, the API side looks like this:
+
+```java
+@PostMapping("/exports")
+public ResponseEntity<ExportJobResponse> requestExport(@RequestBody ExportRequest request) {
+    ExportJob job = exportJobRepository.save(ExportJob.pending(currentUser(), request));
+    exportPublisher.publish(new ExportMessage(job.getId()));
+    return ResponseEntity.accepted().body(ExportJobResponse.from(job));
+}
+```
+
+The message carries only the **job id**. The worker reads everything else from the job row, so the message
+stays small and the database stays the single source of truth for what was asked.
+
+## Why these pieces
+
+- **Why a job table as well as a queue?** The queue moves work. The table records it. With the status in
+  PostgreSQL we can show users what happened to their export, find failed jobs, and answer support questions
+  without digging through logs.
+- **Why Service Bus?** We were already on Azure, and it gives us durable delivery and retries out of the
+  box. If a worker pod restarts mid-export, the message isn't lost.
+- **Why Blob Storage and a SAS link?** Large files never go through the API pods, and access is scoped to
+  one file and limited in time. Nothing needs a cleanup job to revoke links.
+- **Why email?** People request big exports and then get on with their day. A link in their inbox fits how
+  they actually work better than a page they have to keep open.
+
+## Results
+
+- Exports of **60,000–100,000 records** now complete reliably.
+- Export support tickets dropped from **about 50 a week to almost none**.
+- The web tier stays responsive, because the heaviest work no longer runs inside a request.
+
+## What I'd tell someone facing the same problem
+
+If a request regularly takes longer than a few seconds, ask whether the user really needs the answer in that
+response. Often they only need to know the work has started. Return **202**, record the job, and let a worker
+finish it. The pattern is the same whatever the queue: Service Bus, SQS, RabbitMQ or Kafka.
+
+The full project write-up is on the [Cross-Border project page](/projects/cross-border-platform/).
