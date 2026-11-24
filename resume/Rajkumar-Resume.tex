@@ -1,0 +1,215 @@
+  %-------------------------
+  % Resume in Latex
+  % Author : Jake Gutierrez
+  % Based off of: https://github.com/sb2nov/resume
+  % License : MIT
+  %------------------------
+
+  \documentclass[letterpaper,9pt]{article}
+
+  \usepackage{latexsym}
+  \usepackage[empty]{fullpage}
+  \usepackage{titlesec}
+  \usepackage{marvosym}
+  \usepackage[usenames,dvipsnames]{color}
+  \usepackage{verbatim}
+  \usepackage{enumitem}
+  \usepackage[hidelinks]{hyperref}
+  \usepackage{fancyhdr}
+  \usepackage[english]{babel}
+  \usepackage{tabularx}
+  \usepackage{eurosym}
+  \usepackage{graphicx}
+  \input{glyphtounicode}
+
+
+  %----------FONT OPTIONS----------
+  % sans-serif
+  % \usepackage[sfdefault]{FiraSans}
+  % \usepackage[sfdefault]{roboto}
+  % \usepackage[sfdefault]{noto-sans}
+  % \usepackage[default]{sourcesanspro}
+
+  % serif
+  % \usepackage{CormorantGaramond}
+  % \usepackage{charter}
+
+
+  \pagestyle{fancy}
+  \fancyhf{} % clear all header and footer fields
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+
+  % Adjust margins
+  \addtolength{\oddsidemargin}{-0.5in}
+  \addtolength{\evensidemargin}{-0.5in}
+  \addtolength{\textwidth}{1in}
+  \addtolength{\topmargin}{-.5in}
+  \addtolength{\textheight}{1.0in}
+
+  \urlstyle{same}
+
+  \raggedbottom
+  \raggedright
+  \setlength{\tabcolsep}{0in}
+
+  % Sections formatting
+  \titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+  }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+  % Ensure that the generated pdf is machine-readable or ATS-parsable
+  \pdfgentounicode=1
+
+  %-------------------------
+  % Custom commands
+  \newcommand{\resumeItem}[1]{
+    \item\large{
+      {#1 \vspace{0pt}}
+    }
+  }
+
+  \newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & #2 \\
+        \textit{\large#3} & \textit{\large #4} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeSubSubheading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeProjectHeading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{#1} & \textit{#2} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  % Computer Modern's plus is math-sized; this one sits better after numbers.
+  \newcommand{\plus}{\raisebox{0.12ex}{\scalebox{0.72}{+}}}
+
+  \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+  \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+  \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+  %-------------------------------------------
+  %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+  \begin{document}
+
+  %----------HEADING----------
+  % \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  %   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+  %   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+  % \end{tabular*}
+
+  \begin{center}
+      \textbf{\Huge \scshape Rajkumar V B} \\ \vspace{3pt}
+      Bengaluru, Karnataka \\ \vspace{5pt}
+      \small +91 9843315155 $|$ \href{mailto:rajkumarvb.career@gmail.com}{\underline{rajkumarvb.career@gmail.com}} $|$
+      \href{https://rajkumarvb.github.io}{\underline{rajkumarvb.github.io}} $|$
+      \href{https://www.linkedin.com/in/rajkumarvb/}{\underline{LinkedIn}} $|$
+      \href{https://github.com/RajkumarVB}{\underline{GitHub}} $|$
+      \href{https://leetcode.com/Rajkumar003/}{\underline{LeetCode}}
+  \end{center}
+
+
+
+
+  %-----------EXPERIENCE-----------
+  \section{Experience}
+    \resumeSubHeadingListStart
+
+      \resumeSubheading
+      {Societe Generale Global Solution Centre }{July 2022 -- Present}
+      {Software Engineer}{Bengaluru, Karnataka}
+          % \vspace{3pt}
+      \vspace{7pt}
+
+      % \vspace{10pt}
+
+      % ---------- Group Breach Register ----------
+      \resumeProjectHeading{\textbf{Group Breach Register} -- company-wide compliance breach platform}{}
+      \resumeItemListStart
+          \resumeItem{\textbf{Sole backend engineer} migrating the platform from Flask-Admin to \textbf{Spring Boot} and React on AKS: designed \textbf{40--50 REST APIs} (OpenAPI) responding in \textbf{under 1 s}, with \textbf{85\%} test coverage; live in production since November 2026.}
+          \resumeItem{Built a UI-configurable scoring engine with dual scoring logic, Spring Security access by role and business unit, EN/FR support via JSON columns, and Flyway data migration.}
+          \resumeItem{On the earlier Flask version, engineered the cumulative breach-score engine and led the EMEA rollout with region-specific IAM profiles.}
+      \resumeItemListEnd
+      \vspace{3pt}
+
+      % ---------- Cross Border ----------
+      \resumeProjectHeading{\textbf{Cross Border} -- travel approval platform, \textbf{30,000\plus{}} users/month, \textbf{2,000\plus{}} daily}{}
+      \resumeItemListStart
+          \resumeItem{Built backend modules for guidelines, acknowledgements, exports and travel approvals with UI-configurable workflows (manager, country approvers, compliance officers, FYI recipients).}
+          \resumeItem{Re-architected CSV/Excel exports from synchronous to \textbf{asynchronous jobs} on Azure Service Bus, PostgreSQL and Blob Storage with emailed SAS links, removing timeouts on \textbf{60k--100k-record} exports and cutting export tickets from $\sim$\textbf{50/week to near zero}.}
+          \resumeItem{Led the migration from \textbf{SQL Server to PostgreSQL} with no data loss and moved the service from \textbf{on-prem to AKS} with Docker, Helm and GitHub Actions.}
+      \resumeItemListEnd
+      \vspace{3pt}
+
+      % ---------- Regulatory Watch ----------
+      \resumeProjectHeading{\textbf{Regulatory Watch} -- regulatory news crawling and newsletter platform}{}
+      \resumeItemListStart
+          \resumeItem{Developed a full-stack platform that crawls \textbf{1,500\plus{} websites} of \textbf{500\plus{} regulators} across APAC, Europe and the Americas, replacing daily manual checks; \textbf{500k\plus{}} news records (500\plus{} GB) and \textbf{50\plus{} newsletters} a day.}
+          \resumeItem{Built \textit{generic\_engine}, a Selenium and headless Chromium crawler driven by \textbf{XPath rules configured in the UI}, so users with basic HTML knowledge can onboard any website as a feed; daily APScheduler jobs with email alerts when a site's structure changes.}
+          \resumeItem{Integrated \textbf{Microsoft Graph API} for regulators that publish only by email; built feed, institution and newsletter configuration flows and MJML newsletters over SMTP with delivery tracking; moved from Windows Server to AKS.}
+      \resumeItemListEnd
+      \vspace{3pt}
+
+      % ---------- Cost optimization ----------
+      \resumeProjectHeading{\textbf{DB Design and Cost Optimization}}{}
+      \resumeItemListStart
+          \resumeItem{Cut PostgreSQL costs by \textbf{\euro 3,000/month} by right-sizing; automated provisioning and teardown on SG Cloud Platform with \textbf{Terraform} and InfraCost.}
+      \resumeItemListEnd
+      \vspace{5pt}
+    \resumeSubHeadingListEnd
+
+  \vspace{-10pt}
+
+
+
+
+  %-----------EDUCATION-----------
+  \section{Education}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {PSG College of Technology \textmd{-- GPA \textbf{9.31/10}}}{ Coimbatore, Tamil Nadu}
+        {Bachelor of Engineering in Electronics and Communication Engineering}{Aug 2018 -- Jun 2022}
+    \resumeSubHeadingListEnd
+
+
+
+
+
+
+  %
+  %-----------PROGRAMMING SKILLS-----------
+  \section{Technical Skills}
+    \begin{itemize}[leftmargin=0.15in, label={}]
+      \item \large{
+          \textbf{Backend}: Java, Spring Boot, Spring Security, Spring Data JPA, Python, Flask, SQL, REST/OpenAPI, system design.
+      }
+      \item \large{
+          \textbf{Cloud and DevOps}: Azure (AKS, Service Bus, Blob Storage, Key Vault), Docker, Helm, GitHub Actions, Terraform.
+      }
+      \item \large{
+          \textbf{Data and Tools}: PostgreSQL, SQL Server, Flyway, Selenium, Elasticsearch, Kibana, Git.
+      }
+    \end{itemize}
+
+
+
+  %-------------------------------------------
+  \end{document}
