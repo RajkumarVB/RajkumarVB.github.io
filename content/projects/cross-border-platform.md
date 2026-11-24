@@ -62,6 +62,8 @@ I redesigned it as an **asynchronous job**:
 After the redesign, exports of **60,000–100,000 records** complete reliably, and export-related support
 tickets dropped from **about 50 a week to almost none**.
 
+A public, runnable version of this pattern is on GitHub: [async-export-demo](/projects/async-export-demo/).
+
 ### Dashboards
 - Backend APIs for dashboards that give compliance and management teams a view of travel across the bank.
 
