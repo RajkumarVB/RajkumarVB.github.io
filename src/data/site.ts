@@ -24,8 +24,8 @@ export const site = {
   },
   // Paragraphs for the About section.
   about: [
-    "I'm a backend-focused software engineer with 4+ years at Societe Generale, building internal platforms for the bank's compliance teams.",
-    "Most recently I owned the backend of a full platform migration, moving a legacy Python Flask-Admin application to Java and Spring Boot with a React frontend. I designed the REST APIs and the configurable scoring engine, implemented role-based access control with Spring Security, and took the service to production on Azure Kubernetes Service with Helm and GitHub Actions. It went live in November 2026.",
+    "I'm a backend-focused software engineer with 4+ years at Societe Generale, building internal platforms used by compliance teams across the bank.",
+    "I like owning a service end to end: designing the APIs and data model, securing it, and running it in production on Kubernetes. My main stack is Java, Spring Boot, PostgreSQL and Azure, and I'm keen to take on full stack, data and AI engineering work too.",
     "I solve DSA problems regularly and keep every accepted solution, grouped by pattern, in a public repo with a study guide.",
   ],
 };
