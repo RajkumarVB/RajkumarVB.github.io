@@ -12,14 +12,6 @@
     .lbl{fill:#475569;font-size:11px;paint-order:stroke;stroke:#f8fafc;stroke-width:4px;stroke-linejoin:round}
     .badge{fill:#2563eb}
     .bt{fill:#fff;font-size:11px;font-weight:700}
-    @media (prefers-color-scheme: dark){
-      .box{fill:#0f172a;stroke:#334155}
-      .az{fill:#172554;stroke:#1d4ed8}
-      .t{fill:#e2e8f0}.s{fill:#94a3b8}
-      .ln{stroke:#94a3b8}.head{fill:#94a3b8}
-      .lbl{fill:#cbd5e1;stroke:#020617}
-      .badge{fill:#3b82f6}
-    }
   </style>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">

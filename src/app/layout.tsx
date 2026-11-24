@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { BackToTop } from "@/components/BackToTop";
 import { Sidebar } from "@/components/Sidebar";
+import { themeScript } from "@/components/ThemeToggle";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -19,10 +21,14 @@ export const metadata: Metadata = {
 
 // Resolved at build time, so the button only shows once the PDF is committed.
 const hasResume = fs.existsSync(path.join(process.cwd(), "public", site.resumePath));
+const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", site.photoPath));
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
         className={`${inter.variable} ${jetbrains.variable} bg-slate-50 font-sans text-slate-600 antialiased selection:bg-blue-200 dark:bg-slate-950 dark:text-slate-400 dark:selection:bg-blue-500/30`}
       >
@@ -30,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <div className="mx-auto max-w-6xl px-6 md:px-12 lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-16">
-          <Sidebar hasResume={hasResume} />
+          <Sidebar hasResume={hasResume} hasPhoto={hasPhoto} />
           <main id="content" className="py-12 lg:py-20">
             {children}
             <footer className="mt-24 text-sm text-slate-500">
@@ -41,6 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </footer>
           </main>
         </div>
+        <BackToTop />
       </body>
     </html>
   );

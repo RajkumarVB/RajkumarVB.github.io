@@ -3,6 +3,10 @@
 export const site = {
   name: "Rajkumar V B",
   role: "Backend Engineer",
+  // Rotating lines typed under the name in the sidebar (first one is shown without JS).
+  roles: ["Backend Engineer", "Spring Boot and Azure", "Distributed systems", "Crawlers at scale"],
+  // Optional photo: put a square image at public/images/profile.jpg. Initials are shown until then.
+  photoPath: "/images/profile.jpg",
   tagline:
     "I design APIs and backend systems that stay up, and write about what I learn along the way.",
   url: "https://rajkumarvb.github.io",
@@ -12,7 +16,8 @@ export const site = {
   links: {
     github: "https://github.com/RajkumarVB",
     linkedin: "https://www.linkedin.com/in/rajkumarvb/",
-    email: "", // e.g. you@example.com (leave empty to hide)
+    email: "rajkumarvb.career@gmail.com", // leave empty to hide
+    leetcode: "https://leetcode.com/Rajkumar003/",
   },
   // Paragraphs for the About section.
   about: [
@@ -33,12 +38,38 @@ export type Experience = {
 // Most recent first.
 export const experience: Experience[] = [
   {
-    period: "Jun 2022 – Present",
+    period: "Jul 2022 – Present",
     title: "Software Engineer",
     company: "Societe Generale",
     description:
       "Build internal platforms for compliance teams at Societe Generale Global Solution Centre, Bangalore. Sole backend engineer on the rebuild of Group Breach Register, the company-wide breach platform, from Flask-Admin to Spring Boot on AKS. Backend engineer on Cross-Border (30,000+ users a month), where I made exports asynchronous with Azure Service Bus and led the SQL Server to PostgreSQL migration. Built the configurable Selenium crawling engine behind Regulatory Watch, which monitors 1,500+ regulator websites.",
     tech: ["Java", "Spring Boot", "Python", "PostgreSQL", "Azure Service Bus", "Selenium", "AKS", "Helm", "GitHub Actions"],
+  },
+  {
+    period: "Feb 2022 – Jun 2022",
+    title: "Software Engineer Intern",
+    company: "Societe Generale",
+    description:
+      "Designed, built and deployed Genie, an internal chatbot, from scratch. It handled about 180 queries a month and saved around 30 hours of manual work.",
+    tech: ["Python", "Flask", "Flask-Admin", "Docker", "AKS"],
+  },
+];
+
+export type Education = {
+  school: string;
+  degree: string;
+  period: string;
+  location: string;
+  details: string[];
+};
+
+export const education: Education[] = [
+  {
+    school: "PSG College of Technology",
+    degree: "Bachelor of Engineering, Electronics and Communication Engineering",
+    period: "Aug 2018 – Jun 2022",
+    location: "Coimbatore, India",
+    details: ["GPA 9.31 / 10"],
   },
 ];
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
-import { ExperienceList, PageTitle, SectionHeading, Tags } from "@/components/ui";
-import { experience, site, skills } from "@/data/site";
+import { ContactCards, EducationList, ExperienceList, PageTitle, SectionHeading, Tags } from "@/components/ui";
+import { education, experience, site, skills } from "@/data/site";
 
 export const metadata: Metadata = { title: "About" };
 
@@ -29,6 +29,11 @@ export default function AboutPage() {
       </section>
 
       <section className="mt-16">
+        <SectionHeading>Education</SectionHeading>
+        <EducationList items={education} />
+      </section>
+
+      <section className="mt-16">
         <SectionHeading>Skills</SectionHeading>
         <dl className="space-y-4">
           {Object.entries(skills).map(([group, items]) => (
@@ -38,6 +43,11 @@ export default function AboutPage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="mt-16">
+        <SectionHeading>Contact</SectionHeading>
+        <ContactCards links={site.links} />
       </section>
     </>
   );

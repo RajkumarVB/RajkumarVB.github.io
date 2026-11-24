@@ -1,6 +1,6 @@
-import { ExperienceList, MoreLink, PostCard, ProjectCard, SectionHeading } from "@/components/ui";
+import { ContactCards, EducationList, ExperienceList, MoreLink, PostCard, ProjectCard, SectionHeading } from "@/components/ui";
 import leetcode from "@/data/leetcode.json";
-import { experience, site } from "@/data/site";
+import { education, experience, site } from "@/data/site";
 import { getPosts, getProjects } from "@/lib/content";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="space-y-20">
-      <section aria-labelledby="about">
+      <section className="reveal" aria-labelledby="about">
         <SectionHeading id="about">About</SectionHeading>
         <div className="space-y-4 leading-relaxed">
           {site.about.map((p) => (
@@ -19,13 +19,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby="experience">
+      <section className="reveal" aria-labelledby="experience">
         <SectionHeading id="experience">Experience</SectionHeading>
         <ExperienceList items={experience} />
+        <div className="mt-6">
+          <EducationList items={education} />
+        </div>
         <MoreLink href="/about/">Full experience and skills</MoreLink>
       </section>
 
-      <section aria-labelledby="projects">
+      <section className="reveal" aria-labelledby="projects">
         <SectionHeading id="projects">Projects</SectionHeading>
         <div className="space-y-2">
           {projects.map((p) => (
@@ -35,7 +38,7 @@ export default function Home() {
         <MoreLink href="/projects/">All projects</MoreLink>
       </section>
 
-      <section aria-labelledby="dsa">
+      <section className="reveal" aria-labelledby="dsa">
         <SectionHeading id="dsa">Problem solving</SectionHeading>
         <Link
           href="/dsa/"
@@ -56,7 +59,7 @@ export default function Home() {
       </section>
 
       {posts.length > 0 && (
-        <section aria-labelledby="writing">
+        <section className="reveal" aria-labelledby="writing">
           <SectionHeading id="writing">Writing</SectionHeading>
           <div className="space-y-2">
             {posts.map((p) => (
@@ -66,6 +69,13 @@ export default function Home() {
           <MoreLink href="/blog/">All posts</MoreLink>
         </section>
       )}
+      <section className="reveal" aria-labelledby="contact">
+        <SectionHeading id="contact">Contact</SectionHeading>
+        <p className="mb-6 max-w-2xl leading-relaxed">
+          I&apos;m open to backend and software engineering roles. The quickest way to reach me is email or LinkedIn.
+        </p>
+        <ContactCards links={site.links} />
+      </section>
     </div>
   );
 }

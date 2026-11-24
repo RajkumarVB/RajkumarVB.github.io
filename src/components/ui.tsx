@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatDate, tagSlug, type Post, type Project } from "@/lib/content";
-import type { Experience } from "@/data/site";
+import type { Education, Experience } from "@/data/site";
 
 export function SectionHeading({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
@@ -135,5 +135,54 @@ export function MoreLink({ href, children }: { href: string; children: React.Rea
     >
       {children} →
     </Link>
+  );
+}
+
+export function EducationList({ items }: { items: Education[] }) {
+  return (
+    <ol className="space-y-2">
+      {items.map((e) => (
+        <li key={e.school} className="-mx-4 grid gap-2 rounded-xl p-4 sm:grid-cols-[140px_1fr] sm:gap-6">
+          <p className="pt-0.5 text-xs font-semibold uppercase tracking-wide text-slate-500">{e.period}</p>
+          <div>
+            <h3 className="font-semibold text-slate-900 dark:text-slate-100">{e.school}</h3>
+            <p className="mt-1">{e.degree}</p>
+            <p className="mt-1 text-sm text-slate-500">{[e.location, ...e.details].join(" · ")}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+const contactIcon = "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300";
+
+export function ContactCards({ links }: { links: { email?: string; linkedin?: string; github?: string; leetcode?: string } }) {
+  const items = [
+    links.email && { label: "Email", value: links.email, href: `mailto:${links.email}`, icon: "@" },
+    links.linkedin && { label: "LinkedIn", value: links.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""), href: links.linkedin, icon: "in" },
+    links.github && { label: "GitHub", value: links.github.replace(/^https?:\/\//, ""), href: links.github, icon: "gh" },
+    links.leetcode && { label: "LeetCode", value: links.leetcode.replace(/^https?:\/\//, "").replace(/\/$/, ""), href: links.leetcode, icon: "lc" },
+  ].filter(Boolean) as { label: string; value: string; href: string; icon: string }[];
+
+  return (
+    <ul className="grid gap-3 sm:grid-cols-2">
+      {items.map((i) => (
+        <li key={i.label}>
+          <a
+            href={i.href}
+            target={i.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel="noreferrer"
+            className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-blue-600 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-blue-400"
+          >
+            <span className={`${contactIcon} text-sm font-bold`} aria-hidden>{i.icon}</span>
+            <span className="min-w-0">
+              <span className="block text-xs font-semibold uppercase tracking-wide text-slate-500">{i.label}</span>
+              <span className="block truncate font-medium text-slate-900 dark:text-slate-100">{i.value}</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
