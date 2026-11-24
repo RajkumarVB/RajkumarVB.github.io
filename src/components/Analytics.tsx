@@ -83,7 +83,7 @@ export function ViewCount({ code }: { code: string }) {
   useEffect(() => {
     fetch(`https://${code}.goatcounter.com/counter/TOTAL.json`)
       .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((d: { count?: string }) => d.count && setCount(d.count))
+      .then((d: { count?: string }) => d.count && d.count !== "0" && setCount(d.count))
       .catch(() => {});
   }, [code]);
   return count ? <span>{count} visits</span> : null;
