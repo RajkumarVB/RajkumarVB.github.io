@@ -24,7 +24,7 @@ export const site = {
   },
   // Visitor analytics. Your GoatCounter site code, e.g. "rajkumarvb" for
   // rajkumarvb.goatcounter.com. Leave empty to turn analytics and the view counter off.
-  goatcounter: "",
+  goatcounter: "rajkumarvb",
   // Recruiter contact form. The access key from web3forms.com (it is public by
   // design); messages go to the email you registered it with. Leave empty to hide the form.
   web3formsKey: "1c352d7c-7683-4ed5-bcd1-a3faf5328cdd",
